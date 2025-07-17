@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023BB9972E27AEFE00FF7395 /* SupabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BB9952E27AEFE00FF7395 /* SupabaseConfig.swift */; };
+		023BB9982E27AEFE00FF7395 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BB9932E27AEFE00FF7395 /* AuthViewModel.swift */; };
+		023BB9992E27AEFE00FF7395 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023BB9922E27AEFE00FF7395 /* AuthView.swift */; };
 		025230312E279F080076AA46 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 025230202E279F080076AA46 /* Preview Assets.xcassets */; };
 		025230322E279F080076AA46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0252302A2E279F080076AA46 /* Assets.xcassets */; };
 		025230332E279F080076AA46 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025230222E279F080076AA46 /* ColorTheme.swift */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		023BB9922E27AEFE00FF7395 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		023BB9932E27AEFE00FF7395 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		023BB9952E27AEFE00FF7395 /* SupabaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseConfig.swift; sourceTree = "<group>"; };
 		02522FE02E266ECC0076AA46 /* WeePay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeePay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02522FF52E266ECF0076AA46 /* WeePayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeePayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02522FFF2E266ECF0076AA46 /* WeePayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeePayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,13 +105,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		023BB9942E27AEFE00FF7395 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				023BB9922E27AEFE00FF7395 /* AuthView.swift */,
+				023BB9932E27AEFE00FF7395 /* AuthViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		023BB9962E27AEFE00FF7395 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				023BB9952E27AEFE00FF7395 /* SupabaseConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		02522FD72E266ECC0076AA46 = {
 			isa = PBXGroup;
 			children = (
 				0252302F2E279F080076AA46 /* WeePay */,
 				0252303E2E279F0C0076AA46 /* WeePayTests */,
 				025230422E279F0E0076AA46 /* WeePayUITests */,
-				025230462E279F4C0076AA46 /* Frameworks */,
 				02522FE12E266ECC0076AA46 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,6 +173,8 @@
 		0252302F2E279F080076AA46 /* WeePay */ = {
 			isa = PBXGroup;
 			children = (
+				023BB9942E27AEFE00FF7395 /* Auth */,
+				023BB9962E27AEFE00FF7395 /* Config */,
 				025230212E279F080076AA46 /* Preview Content */,
 				025230232E279F080076AA46 /* Theme */,
 				025230292E279F080076AA46 /* Views */,
@@ -178,13 +202,6 @@
 				025230412E279F0E0076AA46 /* WeePayUITestsLaunchTests.swift */,
 			);
 			path = WeePayUITests;
-			sourceTree = "<group>";
-		};
-		025230462E279F4C0076AA46 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +360,9 @@
 				0252303A2E279F080076AA46 /* Persistence.swift in Sources */,
 				0252303B2E279F080076AA46 /* WeePay.xcdatamodeld in Sources */,
 				0252303C2E279F080076AA46 /* WeePayApp.swift in Sources */,
+				023BB9972E27AEFE00FF7395 /* SupabaseConfig.swift in Sources */,
+				023BB9982E27AEFE00FF7395 /* AuthViewModel.swift in Sources */,
+				023BB9992E27AEFE00FF7395 /* AuthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

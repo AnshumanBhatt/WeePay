@@ -64,7 +64,7 @@ class AuthViewModel: ObservableObject {
             showErrorMessage("Please enter your phone number")
             return
         }
-        
+         
         guard isValidPhoneNumber(phoneNumber) else {
             showErrorMessage("Please enter a valid phone number")
             return
