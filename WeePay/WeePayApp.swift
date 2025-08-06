@@ -13,7 +13,7 @@ struct WeePayApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            HomeView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
