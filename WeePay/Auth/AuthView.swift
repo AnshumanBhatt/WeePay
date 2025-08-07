@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AuthView: View {
     @StateObject private var authViewModel = AuthViewModel()
+    @EnvironmentObject var authStateManager: AuthStateManager
     
     var body: some View {
         ZStack {
@@ -23,7 +24,9 @@ struct AuthView: View {
                 case .otpVerification:
                     OTPVerificationView(viewModel: authViewModel)
                 case .completed:
-                    MainTabView()
+                    // AuthStateManager will handle navigation to MainTabView
+                    ProgressView("Completing authentication...")
+                        .foregroundColor(.primaryGreen)
                 }
             }
         }

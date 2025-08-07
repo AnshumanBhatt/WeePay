@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Combine
-import Supabase
+import FirebaseAuth
 
 @MainActor
 class AuthViewModel: ObservableObject {
@@ -21,10 +21,7 @@ class AuthViewModel: ObservableObject {
     @Published var otpCode = ""
     @Published var isSignUp = false
     
-    private let supabase = SupabaseClient(
-        supabaseURL: URL(string: SupabaseConfig.url)!,
-        supabaseKey: SupabaseConfig.anonKey
-    )
+    private var verificationID: String?
     
     enum AuthStep {
         case phoneInput
@@ -44,18 +41,7 @@ class AuthViewModel: ObservableObject {
             return
         }
         
-        isLoading = true
-        
-        do {
-            try await supabase.auth.signInWithOTP(
-                phone: formatPhoneNumber(phoneNumber)
-            )
-            currentStep = .otpVerification
-        } catch {
-            showErrorMessage("Failed to send OTP: \(error.localizedDescription)")
-        }
-        
-        isLoading = false
+        await sendOTP()
     }
     
     // MARK: - Login
@@ -70,15 +56,47 @@ class AuthViewModel: ObservableObject {
             return
         }
         
+        await sendOTP()
+    }
+    
+    // MARK: - Send OTP
+    private func sendOTP() async {
         isLoading = true
         
         do {
-            try await supabase.auth.signInWithOTP(
-                phone: formatPhoneNumber(phoneNumber)
+            let result = try await PhoneAuthProvider.provider().verifyPhoneNumber(
+                formatPhoneNumber(phoneNumber),
+                uiDelegate: nil
             )
+            
+            verificationID = result
             currentStep = .otpVerification
-        } catch {
-            showErrorMessage("Failed to send OTP: \(error.localizedDescription)")
+        } catch let error as NSError {
+            let errorMessage: String
+            
+            // Handle specific Firebase Auth error codes
+            if let authErrorCode = AuthErrorCode(rawValue: error.code) {
+                switch authErrorCode {
+                case .quotaExceeded:
+                    errorMessage = "SMS quota exceeded. Please try again later."
+                case .invalidPhoneNumber:
+                    errorMessage = "Invalid phone number format."
+                case .missingPhoneNumber:
+                    errorMessage = "Please enter a phone number."
+                case .captchaCheckFailed:
+                    errorMessage = "Captcha verification failed. Please try again."
+                case .networkError:
+                    errorMessage = "Network error. Please check your connection and try again."
+                case .tooManyRequests:
+                    errorMessage = "Too many requests. Please wait a moment and try again."
+                default:
+                    errorMessage = "Failed to send OTP: \(error.localizedDescription)"
+                }
+            } else {
+                errorMessage = "Failed to send OTP. Please check your internet connection and try again."
+            }
+            
+            showErrorMessage(errorMessage)
         }
         
         isLoading = false
@@ -91,18 +109,24 @@ class AuthViewModel: ObservableObject {
             return
         }
         
+        guard let verificationID = verificationID else {
+            showErrorMessage("Verification ID not found. Please try again.")
+            return
+        }
+        
         isLoading = true
         
         do {
-            try await supabase.auth.verifyOTP(
-                phone: formatPhoneNumber(phoneNumber),
-                token: otpCode,
-                type: .sms
+            let credential = PhoneAuthProvider.provider().credential(
+                withVerificationID: verificationID,
+                verificationCode: otpCode
             )
+            
+            let result = try await Auth.auth().signIn(with: credential)
             
             // If this is a sign up, update the user profile with name
             if isSignUp {
-                try await updateUserProfile()
+                try await updateUserProfile(user: result.user)
             }
             
             isAuthenticated = true
@@ -115,20 +139,17 @@ class AuthViewModel: ObservableObject {
     }
     
     // MARK: - Update User Profile
-    private func updateUserProfile() async throws {
-        try await supabase.auth.update(
-            user: UserAttributes(
-                data: ["name": AnyJSON.string(name)]
-            )
-        )
+    private func updateUserProfile(user: User) async throws {
+        let changeRequest = user.createProfileChangeRequest()
+        changeRequest.displayName = name
+        try await changeRequest.commitChanges()
     }
     
     // MARK: - Check Auth Status
     func checkAuthStatus() async {
-        do {
-            let session = try await supabase.auth.session
-            isAuthenticated = session.user != nil
-        } catch {
+        if let currentUser = Auth.auth().currentUser {
+            isAuthenticated = true
+        } else {
             isAuthenticated = false
         }
     }
@@ -136,7 +157,7 @@ class AuthViewModel: ObservableObject {
     // MARK: - Sign Out
     func signOut() async {
         do {
-            try await supabase.auth.signOut()
+            try Auth.auth().signOut()
             isAuthenticated = false
             resetAuthState()
         } catch {
