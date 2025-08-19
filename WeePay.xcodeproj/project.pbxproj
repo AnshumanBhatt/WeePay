@@ -24,12 +24,6 @@
 		0252303F2E279F0C0076AA46 /* WeePayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252303D2E279F0C0076AA46 /* WeePayTests.swift */; };
 		025230432E279F0E0076AA46 /* WeePayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025230402E279F0E0076AA46 /* WeePayUITests.swift */; };
 		025230442E279F0E0076AA46 /* WeePayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025230412E279F0E0076AA46 /* WeePayUITestsLaunchTests.swift */; };
-		025230482E279F4C0076AA46 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 025230472E279F4C0076AA46 /* Auth */; };
-		0252304A2E279F4C0076AA46 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 025230492E279F4C0076AA46 /* Functions */; };
-		0252304C2E279F4C0076AA46 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 0252304B2E279F4C0076AA46 /* PostgREST */; };
-		0252304E2E279F4C0076AA46 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 0252304D2E279F4C0076AA46 /* Realtime */; };
-		025230502E279F4C0076AA46 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 0252304F2E279F4C0076AA46 /* Storage */; };
-		025230522E279F4C0076AA46 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 025230512E279F4C0076AA46 /* Supabase */; };
 		029468EB2E44B51A0041F2F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029468EA2E44B51A0041F2F9 /* GoogleService-Info.plist */; };
 		029468EC2E44B51A0041F2F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029468EA2E44B51A0041F2F9 /* GoogleService-Info.plist */; };
 		029468ED2E44B51A0041F2F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029468EA2E44B51A0041F2F9 /* GoogleService-Info.plist */; };
@@ -38,6 +32,8 @@
 		029468F92E44BF710041F2F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029468F82E44BF710041F2F9 /* AppDelegate.swift */; };
 		029468FA2E44BF710041F2F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029468F82E44BF710041F2F9 /* AppDelegate.swift */; };
 		029468FB2E44BF710041F2F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029468F82E44BF710041F2F9 /* AppDelegate.swift */; };
+		02CD60A62E53557800AB53FA /* sendMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CD60A52E53557800AB53FA /* sendMoneyView.swift */; };
+		02CD60AC2E53567700AB53FA /* SendToContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CD60AB2E53567700AB53FA /* SendToContact.swift */; };
 		02DC2C542E431D2600962968 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC2C502E431D2600962968 /* FAQView.swift */; };
 		02DC2C552E431D2600962968 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC2C522E431D2600962968 /* SettingsView.swift */; };
 		02DC2C562E431D2600962968 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC2C512E431D2600962968 /* FeedbackView.swift */; };
@@ -116,6 +112,8 @@
 		029468F62E44BBCE0041F2F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		029468F72E44BE810041F2F9 /* WeePay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeePay.entitlements; sourceTree = "<group>"; };
 		029468F82E44BF710041F2F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02CD60A52E53557800AB53FA /* sendMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendMoneyView.swift; sourceTree = "<group>"; };
+		02CD60AB2E53567700AB53FA /* SendToContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToContact.swift; sourceTree = "<group>"; };
 		02DC2C502E431D2600962968 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		02DC2C512E431D2600962968 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		02DC2C522E431D2600962968 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -136,11 +134,9 @@
 				02DC2C7F2E431E8B00962968 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				02DC2C672E431E8B00962968 /* FirebaseAI in Frameworks */,
 				02DC2C772E431E8B00962968 /* FirebaseCore in Frameworks */,
-				0252304C2E279F4C0076AA46 /* PostgREST in Frameworks */,
 				02DC2C692E431E8B00962968 /* FirebaseAnalytics in Frameworks */,
 				02DC2C872E431E8B00962968 /* FirebaseInstallations in Frameworks */,
 				02DC2C8B2E431E8B00962968 /* FirebaseMLModelDownloader in Frameworks */,
-				0252304A2E279F4C0076AA46 /* Functions in Frameworks */,
 				02DC2C8F2E431E8B00962968 /* FirebaseRemoteConfig in Frameworks */,
 				02DC2C7D2E431E8B00962968 /* FirebaseFirestore in Frameworks */,
 				02DC2C8D2E431E8B00962968 /* FirebasePerformance in Frameworks */,
@@ -148,12 +144,8 @@
 				02DC2C6B2E431E8B00962968 /* FirebaseAnalyticsCore in Frameworks */,
 				02DC2C752E431E8B00962968 /* FirebaseAuthCombine-Community in Frameworks */,
 				02DC2C7B2E431E8B00962968 /* FirebaseDatabase in Frameworks */,
-				025230522E279F4C0076AA46 /* Supabase in Frameworks */,
 				02DC2C6D2E431E8B00962968 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
-				025230482E279F4C0076AA46 /* Auth in Frameworks */,
 				02DC2C832E431E8B00962968 /* FirebaseFunctionsCombine-Community in Frameworks */,
-				025230502E279F4C0076AA46 /* Storage in Frameworks */,
-				0252304E2E279F4C0076AA46 /* Realtime in Frameworks */,
 				02DC2C852E431E8B00962968 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				02DC2C732E431E8B00962968 /* FirebaseAuth in Frameworks */,
 				02DC2C792E431E8B00962968 /* FirebaseCrashlytics in Frameworks */,
@@ -255,6 +247,7 @@
 		0252302F2E279F080076AA46 /* WeePay */ = {
 			isa = PBXGroup;
 			children = (
+				02CD60A42E53555900AB53FA /* SendMoneyModule */,
 				029468F72E44BE810041F2F9 /* WeePay.entitlements */,
 				029468F62E44BBCE0041F2F9 /* Info.plist */,
 				023BB9942E27AEFE00FF7395 /* Auth */,
@@ -288,6 +281,39 @@
 				025230412E279F0E0076AA46 /* WeePayUITestsLaunchTests.swift */,
 			);
 			path = WeePayUITests;
+			sourceTree = "<group>";
+		};
+		02CD60A42E53555900AB53FA /* SendMoneyModule */ = {
+			isa = PBXGroup;
+			children = (
+				02CD60AA2E53565300AB53FA /* ViewModels */,
+				02CD60A92E53564B00AB53FA /* Models */,
+				02CD60A72E53563D00AB53FA /* Views */,
+			);
+			path = SendMoneyModule;
+			sourceTree = "<group>";
+		};
+		02CD60A72E53563D00AB53FA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02CD60A52E53557800AB53FA /* sendMoneyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		02CD60A92E53564B00AB53FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				02CD60AB2E53567700AB53FA /* SendToContact.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		02CD60AA2E53565300AB53FA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		02DC2C532E431D2600962968 /* Menu */ = {
@@ -335,12 +361,6 @@
 			);
 			name = WeePay;
 			packageProductDependencies = (
-				025230472E279F4C0076AA46 /* Auth */,
-				025230492E279F4C0076AA46 /* Functions */,
-				0252304B2E279F4C0076AA46 /* PostgREST */,
-				0252304D2E279F4C0076AA46 /* Realtime */,
-				0252304F2E279F4C0076AA46 /* Storage */,
-				025230512E279F4C0076AA46 /* Supabase */,
 				02DC2C662E431E8B00962968 /* FirebaseAI */,
 				02DC2C682E431E8B00962968 /* FirebaseAnalytics */,
 				02DC2C6A2E431E8B00962968 /* FirebaseAnalyticsCore */,
@@ -442,7 +462,6 @@
 			mainGroup = 02522FD72E266ECC0076AA46;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				025230452E279F2A0076AA46 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				02DC2C642E431E5900962968 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -500,6 +519,7 @@
 				02DC2C632E431D5900962968 /* MetroTicketView.swift in Sources */,
 				025230352E279F080076AA46 /* HomeView.swift in Sources */,
 				025230362E279F080076AA46 /* MainTabView.swift in Sources */,
+				02CD60A62E53557800AB53FA /* sendMoneyView.swift in Sources */,
 				025230372E279F080076AA46 /* MyMoneyView.swift in Sources */,
 				02DC2C542E431D2600962968 /* FAQView.swift in Sources */,
 				02DC2C5A2E431D4D00962968 /* SideMenuView.swift in Sources */,
@@ -515,6 +535,7 @@
 				0252303C2E279F080076AA46 /* WeePayApp.swift in Sources */,
 				023BB9982E27AEFE00FF7395 /* AuthViewModel.swift in Sources */,
 				023BB9992E27AEFE00FF7395 /* AuthView.swift in Sources */,
+				02CD60AC2E53567700AB53FA /* SendToContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,14 +869,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		025230452E279F2A0076AA46 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/supabase/supabase-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.1;
-			};
-		};
 		02DC2C642E431E5900962968 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -867,36 +880,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		025230472E279F4C0076AA46 /* Auth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 025230452E279F2A0076AA46 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Auth;
-		};
-		025230492E279F4C0076AA46 /* Functions */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 025230452E279F2A0076AA46 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Functions;
-		};
-		0252304B2E279F4C0076AA46 /* PostgREST */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 025230452E279F2A0076AA46 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = PostgREST;
-		};
-		0252304D2E279F4C0076AA46 /* Realtime */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 025230452E279F2A0076AA46 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Realtime;
-		};
-		0252304F2E279F4C0076AA46 /* Storage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 025230452E279F2A0076AA46 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Storage;
-		};
-		025230512E279F4C0076AA46 /* Supabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 025230452E279F2A0076AA46 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Supabase;
-		};
 		02DC2C662E431E8B00962968 /* FirebaseAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 02DC2C642E431E5900962968 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

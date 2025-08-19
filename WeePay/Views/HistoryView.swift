@@ -290,5 +290,9 @@ enum TransactionType {
 }
 
 #Preview {
-    HistoryView()
+    NavigationStack {
+        HistoryView()
+    }
+    .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    .environmentObject(AuthStateManager())
 }

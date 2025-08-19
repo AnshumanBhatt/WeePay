@@ -335,5 +335,9 @@ struct SettingsRow: View {
 }
 
 #Preview {
-    MyMoneyView()
+    NavigationStack {
+        MyMoneyView()
+    }
+    .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    .environmentObject(AuthStateManager())
 }

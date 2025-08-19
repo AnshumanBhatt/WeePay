@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SideMenuView: View {
     @Binding var isShowing: Bool
+    let onFAQTap: () -> Void
+    let onSettingsTap: () -> Void
+    let onFeedbackTap: () -> Void
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -27,17 +30,17 @@ struct SideMenuView: View {
                     
                     // Menu items
                     VStack(spacing: 0) {
-                        NavigationLink(destination: FAQView()) {
+                        Button(action: onFAQTap) {
                             MenuItemView(icon: "questionmark.circle.fill", title: "FAQ")
                         }
                         .buttonStyle(PlainButtonStyle())
                         
-                        NavigationLink(destination: SettingsView()) {
+                        Button(action: onSettingsTap) {
                             MenuItemView(icon: "gearshape.fill", title: "Settings")
                         }
                         .buttonStyle(PlainButtonStyle())
                         
-                        NavigationLink(destination: FeedbackView()) {
+                        Button(action: onFeedbackTap) {
                             MenuItemView(icon: "message.fill", title: "Feedback")
                         }
                         .buttonStyle(PlainButtonStyle())
@@ -119,5 +122,12 @@ struct MenuItemView: View {
 }
 
 #Preview {
-    SideMenuView(isShowing: .constant(true))
+    SideMenuView(
+        isShowing: .constant(true),
+        onFAQTap: {},
+        onSettingsTap: {},
+        onFeedbackTap: {}
+    )
+    .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    .environmentObject(AuthStateManager())
 }

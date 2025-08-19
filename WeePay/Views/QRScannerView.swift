@@ -34,6 +34,10 @@ struct QRScannerView: View {
 }
 
 #Preview {
-    QRScannerView()
+    NavigationStack {
+        QRScannerView()
+    }
+    .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    .environmentObject(AuthStateManager())
 }
 

@@ -13,7 +13,6 @@ struct SettingsView: View {
     @State private var showingSignOutAlert = false
     
     var body: some View {
-        NavigationView {
             VStack(spacing: 0) {
                 // Header
                 VStack(spacing: 16) {
@@ -89,14 +88,13 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
-            .alert("Sign Out", isPresented: $showingSignOutAlert) {
-                Button("Cancel", role: .cancel) { }
-                Button("Sign Out", role: .destructive) {
-                    authStateManager.signOut()
-                }
-            } message: {
-                Text("Are you sure you want to sign out?")
+        .alert("Sign Out", isPresented: $showingSignOutAlert) {
+            Button("Cancel", role: .cancel) { }
+            Button("Sign Out", role: .destructive) {
+                authStateManager.signOut()
             }
+        } message: {
+            Text("Are you sure you want to sign out?")
         }
     }
 }

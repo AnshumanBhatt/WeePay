@@ -32,5 +32,9 @@ struct InvestView: View {
 }
 
 #Preview {
-    InvestView()
+    NavigationStack {
+        InvestView()
+    }
+    .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    .environmentObject(AuthStateManager())
 }

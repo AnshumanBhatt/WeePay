@@ -15,10 +15,11 @@ struct HomeView: View {
     @State private var showingSideMenu = false
     @State private var isBalanceHidden = false
     @State private var showingQRScanner = false
+    @State private var navigationPath = NavigationPath()
     
     var body: some View {
-        ZStack {
-            NavigationView {
+        NavigationStack(path: $navigationPath) {
+            ZStack {
                 ScrollView {
                     VStack(spacing: 24) {
                         // Header Section
@@ -44,16 +45,42 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                 }
                 .background(Color.lightGreen.ignoresSafeArea())
-                .navigationBarHidden(true)
-            }
             
-            // Side Menu
-            if showingSideMenu {
-                SideMenuView(isShowing: $showingSideMenu)
+                // Side Menu
+                if showingSideMenu {
+                    SideMenuView(
+                        isShowing: $showingSideMenu,
+                        onFAQTap: { 
+                            navigationPath.append("FAQ")
+                            showingSideMenu = false
+                        },
+                        onSettingsTap: { 
+                            navigationPath.append("Settings")
+                            showingSideMenu = false
+                        },
+                        onFeedbackTap: { 
+                            navigationPath.append("Feedback")
+                            showingSideMenu = false
+                        }
+                    )
                     .transition(.move(edge: .leading))
                     .zIndex(1)
+                }
+            }
+            .navigationDestination(for: String.self) { destination in
+                switch destination {
+                case "FAQ":
+                    FAQView()
+                case "Settings":
+                    SettingsView()
+                case "Feedback":
+                    FeedbackView()
+                default:
+                    EmptyView()
+                }
             }
         }
+        .navigationBarHidden(true)
         .animation(.easeInOut(duration: 0.3), value: showingSideMenu)
         .sheet(isPresented: $showingQRScanner) {
             QRCodeScannerView()
@@ -412,5 +439,9 @@ struct TransactionRow: View {
 }
 
 #Preview {
-    HomeView()
+    NavigationStack {
+        HomeView()
+    }
+    .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    .environmentObject(AuthStateManager())
 }
