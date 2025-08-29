@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var expenseViewModel = ExpenseTrackingViewModel()
     @State private var balance: Double = 12547.50
     @State private var showingSendMoney = false
     @State private var showingCheckBalance = false
@@ -15,6 +16,8 @@ struct HomeView: View {
     @State private var showingSideMenu = false
     @State private var isBalanceHidden = false
     @State private var showingQRScanner = false
+    @State private var showingAddExpense = false
+    @State private var showingExpenseDashboard = false
     @State private var navigationPath = NavigationPath()
     
     var body: some View {
@@ -30,6 +33,12 @@ struct HomeView: View {
                         
                         // Action Card Panel
                         actionCardPanel
+                        
+                        // Expense Summary Card
+                        expenseSummaryCard
+                        
+                        // Monthly Comparison Card
+                        monthlyComparisonCard
                         
                         // Services Section
                         servicesSection
@@ -84,6 +93,12 @@ struct HomeView: View {
         .animation(.easeInOut(duration: 0.3), value: showingSideMenu)
         .sheet(isPresented: $showingQRScanner) {
             QRCodeScannerView()
+        }
+        .sheet(isPresented: $showingAddExpense) {
+            AddExpenseView()
+        }
+        .fullScreenCover(isPresented: $showingExpenseDashboard) {
+            ExpenseDashboardView()
         }
     }
     
@@ -298,6 +313,164 @@ struct HomeView: View {
             .clipShape(RoundedRectangle(cornerRadius: 16))
             .shadow(color: .gray.opacity(0.1), radius: 6, x: 0, y: 3)
         }
+    }
+    
+    private var expenseSummaryCard: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Text("Expense Tracking")
+                    .font(.headline)
+                    .foregroundColor(.textPrimary)
+                
+                Spacer()
+                
+                Button("View Details") {
+                    showingExpenseDashboard = true
+                }
+                .font(.subheadline)
+                .foregroundColor(.primaryGreen)
+            }
+            
+            HStack(spacing: 12) {
+                // Monthly Expenses
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("This Month")
+                        .font(.caption)
+                        .foregroundColor(.textSecondary)
+                    
+                    Text(expenseViewModel.formatCurrency(expenseViewModel.monthlyExpenses))
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.red)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                // Monthly Savings
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Savings")
+                        .font(.caption)
+                        .foregroundColor(.textSecondary)
+                    
+                    Text(expenseViewModel.formatCurrency(expenseViewModel.monthlySavings))
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(expenseViewModel.monthlySavings >= 0 ? .primaryGreen : .red)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            
+            // Quick Action Buttons
+            HStack(spacing: 12) {
+                Button("Add Expense") {
+                    showingAddExpense = true
+                }
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .foregroundColor(.white)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(Color.red)
+                .clipShape(Capsule())
+                
+                Button("Add Income") {
+                    showingAddExpense = true
+                }
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .foregroundColor(.white)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(Color.primaryGreen)
+                .clipShape(Capsule())
+                
+                Spacer()
+            }
+        }
+        .padding(20)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .shadow(color: .gray.opacity(0.1), radius: 6, x: 0, y: 3)
+    }
+    
+    private var monthlyComparisonCard: some View {
+        let comparison = expenseViewModel.getMonthlyComparison()
+        let percentageChange = comparison.percentageChange
+        
+        return VStack(alignment: .leading, spacing: 16) {
+            Text("Monthly Comparison")
+                .font(.headline)
+                .foregroundColor(.textPrimary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            HStack(spacing: 20) {
+                // Last Month
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Last Month")
+                        .font(.caption)
+                        .foregroundColor(.textSecondary)
+                    
+                    Text(expenseViewModel.formatCurrency(comparison.lastMonth))
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.textPrimary)
+                }
+                
+                // Comparison Arrow
+                Image(systemName: percentageChange >= 0 ? "arrow.up.circle.fill" : "arrow.down.circle.fill")
+                    .font(.title)
+                    .foregroundColor(percentageChange >= 0 ? .red : .primaryGreen)
+                
+                // This Month
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("This Month")
+                        .font(.caption)
+                        .foregroundColor(.textSecondary)
+                    
+                    Text(expenseViewModel.formatCurrency(comparison.currentMonth))
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.textPrimary)
+                }
+                
+                Spacer()
+                
+                // Percentage Change
+                VStack(alignment: .trailing, spacing: 4) {
+                    Text("\(abs(percentageChange), specifier: "%.1f")%")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(percentageChange >= 0 ? .red : .primaryGreen)
+                    
+                    Text(percentageChange >= 0 ? "increase" : "decrease")
+                        .font(.caption)
+                        .foregroundColor(.textSecondary)
+                }
+            }
+            
+            // Insights
+            if let insight = expenseViewModel.generateMonthlyInsights().first {
+                VStack(spacing: 8) {
+                    Divider()
+                    
+                    HStack(spacing: 8) {
+                        Image(systemName: "lightbulb.fill")
+                            .foregroundColor(.primaryGreen)
+                            .font(.caption)
+                        
+                        Text(insight)
+                            .font(.caption)
+                            .foregroundColor(.textSecondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                        
+                        Spacer()
+                    }
+                }
+            }
+        }
+        .padding(20)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .shadow(color: .gray.opacity(0.1), radius: 6, x: 0, y: 3)
     }
 }
 

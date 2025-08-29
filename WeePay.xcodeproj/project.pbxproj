@@ -24,6 +24,24 @@
 		0252303F2E279F0C0076AA46 /* WeePayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252303D2E279F0C0076AA46 /* WeePayTests.swift */; };
 		025230432E279F0E0076AA46 /* WeePayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025230402E279F0E0076AA46 /* WeePayUITests.swift */; };
 		025230442E279F0E0076AA46 /* WeePayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025230412E279F0E0076AA46 /* WeePayUITestsLaunchTests.swift */; };
+		025BE9532E5DE38500C07673 /* ExpenseCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE9512E5DE38500C07673 /* ExpenseCategoryModel.swift */; };
+		025BE9542E5DE38500C07673 /* ExpenseCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE9512E5DE38500C07673 /* ExpenseCategoryModel.swift */; };
+		025BE9552E5DE38500C07673 /* ExpenseCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE9512E5DE38500C07673 /* ExpenseCategoryModel.swift */; };
+		025BE9582E5DE39B00C07673 /* ExpenseTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE9562E5DE39B00C07673 /* ExpenseTrackingViewModel.swift */; };
+		025BE9592E5DE39B00C07673 /* ExpenseTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE9562E5DE39B00C07673 /* ExpenseTrackingViewModel.swift */; };
+		025BE95A2E5DE39B00C07673 /* ExpenseTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE9562E5DE39B00C07673 /* ExpenseTrackingViewModel.swift */; };
+		025BE9602E5DE42B00C07673 /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95C2E5DE42B00C07673 /* CategoryPickerView.swift */; };
+		025BE9612E5DE42B00C07673 /* PaymentMethodPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95E2E5DE42B00C07673 /* PaymentMethodPickerView.swift */; };
+		025BE9622E5DE42B00C07673 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95B2E5DE42B00C07673 /* AddExpenseView.swift */; };
+		025BE9632E5DE42B00C07673 /* ExpenseDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95D2E5DE42B00C07673 /* ExpenseDashboardView.swift */; };
+		025BE9642E5DE42B00C07673 /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95C2E5DE42B00C07673 /* CategoryPickerView.swift */; };
+		025BE9652E5DE42B00C07673 /* PaymentMethodPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95E2E5DE42B00C07673 /* PaymentMethodPickerView.swift */; };
+		025BE9662E5DE42B00C07673 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95B2E5DE42B00C07673 /* AddExpenseView.swift */; };
+		025BE9672E5DE42B00C07673 /* ExpenseDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95D2E5DE42B00C07673 /* ExpenseDashboardView.swift */; };
+		025BE9682E5DE42B00C07673 /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95C2E5DE42B00C07673 /* CategoryPickerView.swift */; };
+		025BE9692E5DE42B00C07673 /* PaymentMethodPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95E2E5DE42B00C07673 /* PaymentMethodPickerView.swift */; };
+		025BE96A2E5DE42B00C07673 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95B2E5DE42B00C07673 /* AddExpenseView.swift */; };
+		025BE96B2E5DE42B00C07673 /* ExpenseDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BE95D2E5DE42B00C07673 /* ExpenseDashboardView.swift */; };
 		029468EB2E44B51A0041F2F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029468EA2E44B51A0041F2F9 /* GoogleService-Info.plist */; };
 		029468EC2E44B51A0041F2F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029468EA2E44B51A0041F2F9 /* GoogleService-Info.plist */; };
 		029468ED2E44B51A0041F2F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029468EA2E44B51A0041F2F9 /* GoogleService-Info.plist */; };
@@ -106,6 +124,12 @@
 		0252303D2E279F0C0076AA46 /* WeePayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeePayTests.swift; sourceTree = "<group>"; };
 		025230402E279F0E0076AA46 /* WeePayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeePayUITests.swift; sourceTree = "<group>"; };
 		025230412E279F0E0076AA46 /* WeePayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeePayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		025BE9512E5DE38500C07673 /* ExpenseCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryModel.swift; sourceTree = "<group>"; };
+		025BE9562E5DE39B00C07673 /* ExpenseTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackingViewModel.swift; sourceTree = "<group>"; };
+		025BE95B2E5DE42B00C07673 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		025BE95C2E5DE42B00C07673 /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
+		025BE95D2E5DE42B00C07673 /* ExpenseDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDashboardView.swift; sourceTree = "<group>"; };
+		025BE95E2E5DE42B00C07673 /* PaymentMethodPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodPickerView.swift; sourceTree = "<group>"; };
 		029468EA2E44B51A0041F2F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		029468F22E44B8220041F2F9 /* FirebaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConfig.swift; sourceTree = "<group>"; };
 		029468F42E44B8320041F2F9 /* AuthStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStateManager.swift; sourceTree = "<group>"; };
@@ -231,6 +255,7 @@
 		025230292E279F080076AA46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				025BE95F2E5DE42B00C07673 /* Expenses */,
 				025230242E279F080076AA46 /* HistoryView.swift */,
 				025230252E279F080076AA46 /* HomeView.swift */,
 				02DC2C532E431D2600962968 /* Menu */,
@@ -247,6 +272,8 @@
 		0252302F2E279F080076AA46 /* WeePay */ = {
 			isa = PBXGroup;
 			children = (
+				025BE9572E5DE39B00C07673 /* ViewModels */,
+				025BE9522E5DE38500C07673 /* Models */,
 				02CD60A42E53555900AB53FA /* SendMoneyModule */,
 				029468F72E44BE810041F2F9 /* WeePay.entitlements */,
 				029468F62E44BBCE0041F2F9 /* Info.plist */,
@@ -281,6 +308,33 @@
 				025230412E279F0E0076AA46 /* WeePayUITestsLaunchTests.swift */,
 			);
 			path = WeePayUITests;
+			sourceTree = "<group>";
+		};
+		025BE9522E5DE38500C07673 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				025BE9512E5DE38500C07673 /* ExpenseCategoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		025BE9572E5DE39B00C07673 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				025BE9562E5DE39B00C07673 /* ExpenseTrackingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		025BE95F2E5DE42B00C07673 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				025BE95B2E5DE42B00C07673 /* AddExpenseView.swift */,
+				025BE95C2E5DE42B00C07673 /* CategoryPickerView.swift */,
+				025BE95D2E5DE42B00C07673 /* ExpenseDashboardView.swift */,
+				025BE95E2E5DE42B00C07673 /* PaymentMethodPickerView.swift */,
+			);
+			path = Expenses;
 			sourceTree = "<group>";
 		};
 		02CD60A42E53555900AB53FA /* SendMoneyModule */ = {
@@ -510,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025BE95A2E5DE39B00C07673 /* ExpenseTrackingViewModel.swift in Sources */,
 				029468FA2E44BF710041F2F9 /* AppDelegate.swift in Sources */,
 				025230332E279F080076AA46 /* ColorTheme.swift in Sources */,
 				025230342E279F080076AA46 /* HistoryView.swift in Sources */,
@@ -522,6 +577,7 @@
 				02CD60A62E53557800AB53FA /* sendMoneyView.swift in Sources */,
 				025230372E279F080076AA46 /* MyMoneyView.swift in Sources */,
 				02DC2C542E431D2600962968 /* FAQView.swift in Sources */,
+				025BE9552E5DE38500C07673 /* ExpenseCategoryModel.swift in Sources */,
 				02DC2C5A2E431D4D00962968 /* SideMenuView.swift in Sources */,
 				02DC2C552E431D2600962968 /* SettingsView.swift in Sources */,
 				02DC2C562E431D2600962968 /* FeedbackView.swift in Sources */,
@@ -529,6 +585,10 @@
 				029468F32E44B8220041F2F9 /* FirebaseConfig.swift in Sources */,
 				025230392E279F080076AA46 /* ContentView.swift in Sources */,
 				0252303A2E279F080076AA46 /* Persistence.swift in Sources */,
+				025BE9682E5DE42B00C07673 /* CategoryPickerView.swift in Sources */,
+				025BE9692E5DE42B00C07673 /* PaymentMethodPickerView.swift in Sources */,
+				025BE96A2E5DE42B00C07673 /* AddExpenseView.swift in Sources */,
+				025BE96B2E5DE42B00C07673 /* ExpenseDashboardView.swift in Sources */,
 				0252303B2E279F080076AA46 /* WeePay.xcdatamodeld in Sources */,
 				02DC2C582E431D4000962968 /* QRCodeScannerView.swift in Sources */,
 				029468F52E44B8320041F2F9 /* AuthStateManager.swift in Sources */,
@@ -543,6 +603,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025BE9582E5DE39B00C07673 /* ExpenseTrackingViewModel.swift in Sources */,
+				025BE9642E5DE42B00C07673 /* CategoryPickerView.swift in Sources */,
+				025BE9652E5DE42B00C07673 /* PaymentMethodPickerView.swift in Sources */,
+				025BE9662E5DE42B00C07673 /* AddExpenseView.swift in Sources */,
+				025BE9672E5DE42B00C07673 /* ExpenseDashboardView.swift in Sources */,
+				025BE9532E5DE38500C07673 /* ExpenseCategoryModel.swift in Sources */,
 				029468FB2E44BF710041F2F9 /* AppDelegate.swift in Sources */,
 				0252303F2E279F0C0076AA46 /* WeePayTests.swift in Sources */,
 			);
@@ -552,8 +618,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025BE9542E5DE38500C07673 /* ExpenseCategoryModel.swift in Sources */,
 				029468F92E44BF710041F2F9 /* AppDelegate.swift in Sources */,
 				025230432E279F0E0076AA46 /* WeePayUITests.swift in Sources */,
+				025BE9602E5DE42B00C07673 /* CategoryPickerView.swift in Sources */,
+				025BE9612E5DE42B00C07673 /* PaymentMethodPickerView.swift in Sources */,
+				025BE9622E5DE42B00C07673 /* AddExpenseView.swift in Sources */,
+				025BE9632E5DE42B00C07673 /* ExpenseDashboardView.swift in Sources */,
+				025BE9592E5DE39B00C07673 /* ExpenseTrackingViewModel.swift in Sources */,
 				025230442E279F0E0076AA46 /* WeePayUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

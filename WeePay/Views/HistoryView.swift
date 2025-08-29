@@ -6,39 +6,29 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HistoryView: View {
+    @StateObject private var expenseViewModel = ExpenseTrackingViewModel()
     @State private var searchText = ""
     @State private var selectedFilter = "All"
     @State private var showingFilterSheet = false
+    @State private var showingAddExpense = false
     
-    let filterOptions = ["All", "Sent", "Received", "Recharged", "Bills"]
+    let filterOptions = ["All", "Expense", "Income", "Payment"]
     
-    let transactions = [
-        Transaction(id: 1, title: "Rahul Sharma", subtitle: "Money sent", amount: -500.00, time: "2 hours ago", type: .sent),
-        Transaction(id: 2, title: "Salary Credit", subtitle: "Bank transfer", amount: 25000.00, time: "Yesterday", type: .received),
-        Transaction(id: 3, title: "Priya Patel", subtitle: "Money received", amount: 1200.00, time: "2 days ago", type: .received),
-        Transaction(id: 4, title: "Mobile Recharge", subtitle: "Airtel prepaid", amount: -399.00, time: "3 days ago", type: .recharge),
-        Transaction(id: 5, title: "Electricity Bill", subtitle: "MSEB payment", amount: -1850.00, time: "1 week ago", type: .bill),
-        Transaction(id: 6, title: "Amit Kumar", subtitle: "Money sent", amount: -750.00, time: "1 week ago", type: .sent),
-        Transaction(id: 7, title: "Cashback", subtitle: "Reward credit", amount: 50.00, time: "2 weeks ago", type: .received),
-        Transaction(id: 8, title: "DTH Recharge", subtitle: "Tata Sky", amount: -299.00, time: "2 weeks ago", type: .recharge)
-    ]
-    
-    var filteredTransactions: [Transaction] {
-        var filtered = transactions
+    var filteredTransactions: [ExpenseTransaction] {
+        var filtered = expenseViewModel.transactions
         
         if selectedFilter != "All" {
             filtered = filtered.filter { transaction in
                 switch selectedFilter {
-                case "Sent":
-                    return transaction.type == .sent
-                case "Received":
-                    return transaction.type == .received
-                case "Recharged":
-                    return transaction.type == .recharge
-                case "Bills":
-                    return transaction.type == .bill
+                case "Expense":
+                    return transaction.type == TransactionType.expense.rawValue
+                case "Income":
+                    return transaction.type == TransactionType.income.rawValue
+                case "Payment":
+                    return transaction.type == TransactionType.payment.rawValue
                 default:
                     return true
                 }
@@ -47,8 +37,9 @@ struct HistoryView: View {
         
         if !searchText.isEmpty {
             filtered = filtered.filter { transaction in
-                transaction.title.localizedCaseInsensitiveContains(searchText) ||
-                transaction.subtitle.localizedCaseInsensitiveContains(searchText)
+                (transaction.title?.localizedCaseInsensitiveContains(searchText) ?? false) ||
+                (transaction.category?.localizedCaseInsensitiveContains(searchText) ?? false) ||
+                (transaction.descriptionText?.localizedCaseInsensitiveContains(searchText) ?? false)
             }
         }
         
@@ -137,13 +128,47 @@ struct HistoryView: View {
     
     private var transactionList: some View {
         ScrollView {
-            LazyVStack(spacing: 12) {
-                ForEach(filteredTransactions) { transaction in
-                    DetailedTransactionRow(transaction: transaction)
+            if filteredTransactions.isEmpty {
+                VStack(spacing: 16) {
+                    Image(systemName: "doc.text.fill")
+                        .font(.system(size: 40))
+                        .foregroundColor(.textSecondary.opacity(0.5))
+                    
+                    Text("No transactions found")
+                        .font(.headline)
+                        .foregroundColor(.textSecondary)
+                    
+                    Text("Add some transactions to see them here")
+                        .font(.subheadline)
+                        .foregroundColor(.textSecondary.opacity(0.7))
+                        .multilineTextAlignment(.center)
+                    
+                    Button("Add Transaction") {
+                        showingAddExpense = true
+                    }
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 12)
+                    .background(Color.primaryGreen)
+                    .clipShape(Capsule())
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(.top, 100)
+            } else {
+                LazyVStack(spacing: 12) {
+                    ForEach(filteredTransactions, id: \.id) { transaction in
+                        ExpenseTransactionRow(transaction: transaction) {
+                            expenseViewModel.deleteTransaction(transaction)
+                        }
+                    }
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 100)
             }
-            .padding(.horizontal, 20)
-            .padding(.bottom, 100)
+        }
+        .sheet(isPresented: $showingAddExpense) {
+            AddExpenseView()
         }
     }
 }
@@ -168,33 +193,72 @@ struct FilterChip: View {
     }
 }
 
-struct DetailedTransactionRow: View {
-    let transaction: Transaction
+struct ExpenseTransactionRow: View {
+    let transaction: ExpenseTransaction
+    let onDelete: () -> Void
+    
+    private var transactionType: TransactionType {
+        TransactionType(rawValue: transaction.type ?? "") ?? .expense
+    }
+    
+    private var categoryColor: Color {
+        ExpenseCategoryModel.getCategoryColor(transaction.category ?? "Other")
+    }
+    
+    private var categoryIcon: String {
+        ExpenseCategoryModel.getCategoryIcon(transaction.category ?? "Other")
+    }
+    
+    private var isExpense: Bool {
+        transactionType == .expense || transactionType == .payment
+    }
+    
+    private var formattedAmount: String {
+        let prefix = isExpense ? "-" : "+"
+        return "\(prefix)₹\(String(format: "%.2f", transaction.amount))"
+    }
+    
+    private var formattedDate: String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.dateTimeStyle = .named
+        return formatter.localizedString(for: transaction.date ?? Date(), relativeTo: Date())
+    }
     
     var body: some View {
         VStack(spacing: 16) {
             HStack(spacing: 16) {
-                // Icon
+                // Category Icon
                 Circle()
-                    .fill(transaction.amount < 0 ? Color.errorRed.opacity(0.1) : Color.primaryGreen.opacity(0.1))
+                    .fill(categoryColor.opacity(0.1))
                     .frame(width: 50, height: 50)
                     .overlay(
-                        Image(systemName: transaction.iconName)
+                        Image(systemName: categoryIcon)
                             .font(.system(size: 20, weight: .medium))
-                            .foregroundColor(transaction.amount < 0 ? .errorRed : .primaryGreen)
+                            .foregroundColor(categoryColor)
                     )
                 
-                // Details
+                // Transaction Details
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(transaction.title)
+                    Text(transaction.title ?? "Unknown")
                         .font(.headline)
                         .foregroundColor(.textPrimary)
                     
-                    Text(transaction.subtitle)
-                        .font(.subheadline)
-                        .foregroundColor(.textSecondary)
+                    HStack {
+                        Text(transaction.category ?? "Other")
+                            .font(.subheadline)
+                            .foregroundColor(.textSecondary)
+                        
+                        if let paymentMethod = transaction.paymentMethod {
+                            Text("•")
+                                .foregroundColor(.textSecondary.opacity(0.5))
+                            
+                            Text(PaymentMethod(rawValue: paymentMethod)?.displayName ?? paymentMethod)
+                                .font(.subheadline)
+                                .foregroundColor(.textSecondary)
+                        }
+                    }
                     
-                    Text(transaction.time)
+                    Text(formattedDate)
                         .font(.caption)
                         .foregroundColor(.textSecondary)
                 }
@@ -202,91 +266,45 @@ struct DetailedTransactionRow: View {
                 Spacer()
                 
                 // Amount
-                Text(transaction.formattedAmount)
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .foregroundColor(transaction.amount < 0 ? .errorRed : .primaryGreen)
+                VStack(alignment: .trailing, spacing: 4) {
+                    Text(formattedAmount)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundColor(isExpense ? .red : .primaryGreen)
+                    
+                    Text(transactionType.displayName)
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 2)
+                        .background(categoryColor.opacity(0.1))
+                        .foregroundColor(categoryColor)
+                        .clipShape(Capsule())
+                }
             }
             
-            // Status Badge
-            HStack {
-                Spacer()
-                
-                Text(transaction.statusText)
-                    .font(.caption)
-                    .fontWeight(.medium)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 4)
-                    .background(transaction.statusColor.opacity(0.1))
-                    .foregroundColor(transaction.statusColor)
-                    .clipShape(Capsule())
+            // Description and Actions
+            if let description = transaction.descriptionText, !description.isEmpty {
+                VStack(alignment: .leading, spacing: 8) {
+                    Divider()
+                    
+                    Text(description)
+                        .font(.subheadline)
+                        .foregroundColor(.textSecondary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
             }
         }
         .padding(20)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .shadow(color: .gray.opacity(0.1), radius: 6, x: 0, y: 3)
-    }
-}
-
-struct Transaction: Identifiable {
-    let id: Int
-    let title: String
-    let subtitle: String
-    let amount: Double
-    let time: String
-    let type: TransactionType
-    
-    var formattedAmount: String {
-        let prefix = amount < 0 ? "-" : "+"
-        return "\(prefix)₹\(abs(amount))"
-    }
-    
-    var iconName: String {
-        switch type {
-        case .sent:
-            return "arrow.up.right"
-        case .received:
-            return "arrow.down.left"
-        case .recharge:
-            return "phone.fill"
-        case .bill:
-            return "bolt.fill"
+        .contextMenu {
+            Button("Delete", role: .destructive) {
+                onDelete()
+            }
         }
     }
-    
-    var statusText: String {
-        switch type {
-        case .sent:
-            return "Completed"
-        case .received:
-            return "Received"
-        case .recharge:
-            return "Successful"
-        case .bill:
-            return "Paid"
-        }
-    }
-    
-    var statusColor: Color {
-        switch type {
-        case .sent:
-            return .primaryGreen
-        case .received:
-            return .primaryGreen
-        case .recharge:
-            return .accentGreen
-        case .bill:
-            return .warningOrange
-        }
-    }
-}
-
-enum TransactionType {
-    case sent
-    case received
-    case recharge
-    case bill
 }
 
 #Preview {
