@@ -36,5 +36,5 @@ struct InvestView: View {
         InvestView()
     }
     .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    .environmentObject(AuthStateManager())
+    .environmentObject(AuthStateManager(isPreview: true))
 }

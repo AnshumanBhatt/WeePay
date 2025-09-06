@@ -9,11 +9,15 @@ import SwiftUI
 import CoreData
 
 struct HistoryView: View {
-    @StateObject private var expenseViewModel = ExpenseTrackingViewModel()
+    @StateObject private var expenseViewModel: ExpenseTrackingViewModel
     @State private var searchText = ""
     @State private var selectedFilter = "All"
     @State private var showingFilterSheet = false
     @State private var showingAddExpense = false
+    
+    init(isPreview: Bool = false) {
+        self._expenseViewModel = StateObject(wrappedValue: ExpenseTrackingViewModel(isPreview: isPreview))
+    }
     
     let filterOptions = ["All", "Expense", "Income", "Payment"]
     
@@ -309,8 +313,8 @@ struct ExpenseTransactionRow: View {
 
 #Preview {
     NavigationStack {
-        HistoryView()
+        HistoryView(isPreview: true)
     }
     .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    .environmentObject(AuthStateManager())
+    .environmentObject(AuthStateManager(isPreview: true))
 }

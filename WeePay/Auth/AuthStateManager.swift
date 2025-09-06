@@ -14,9 +14,13 @@ class AuthStateManager: ObservableObject {
     @Published var currentUser: User?
     
     private var authListener: AuthStateDidChangeListenerHandle?
+    private let isPreview: Bool
     
-    init() {
-        setupAuthListener()
+    init(isPreview: Bool = false) {
+        self.isPreview = isPreview
+        if !isPreview {
+            setupAuthListener()
+        }
     }
     
     private func setupAuthListener() {

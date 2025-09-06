@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct AuthView: View {
-    @StateObject private var authViewModel = AuthViewModel()
+    @StateObject private var authViewModel: AuthViewModel
     @EnvironmentObject var authStateManager: AuthStateManager
+    
+    init(isPreview: Bool = false) {
+        self._authViewModel = StateObject(wrappedValue: AuthViewModel(isPreview: isPreview))
+    }
     
     var body: some View {
         ZStack {
@@ -358,6 +362,4 @@ struct OTPVerificationView: View {
     }
 }
 
-#Preview {
-    AuthView()
-}
+

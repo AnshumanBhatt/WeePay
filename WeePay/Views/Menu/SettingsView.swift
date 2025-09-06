@@ -139,4 +139,5 @@ struct SettingRow: View {
 
 #Preview {
     SettingsView()
+        
 }

@@ -23,13 +23,35 @@ class ExpenseTrackingViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var showError = false
     
-    private let persistenceController: PersistenceController
+    private let persistenceController: PersistenceController?
     private var cancellables = Set<AnyCancellable>()
+    private let isPreview: Bool 
     
-    init(persistenceController: PersistenceController = PersistenceController.shared) {
-        self.persistenceController = persistenceController
-        loadTransactions()
-        calculateMonthlyData()
+    init(persistenceController: PersistenceController? = nil, isPreview: Bool = false) {
+        self.isPreview = isPreview
+        self.persistenceController = persistenceController ?? (isPreview ? nil : PersistenceController.shared)
+        
+        if isPreview {
+            setupPreviewData()
+        } else {
+            loadTransactions()
+            calculateMonthlyData()
+        }
+    }
+    
+    private func setupPreviewData() {
+        // Setup sample data for preview
+        monthlyExpenses = 15420.50
+        monthlyIncome = 45000.00
+        monthlySavings = monthlyIncome - monthlyExpenses
+        weeklySpent = 3250.00
+        categoryTotals = [
+            "Food": 5200.00,
+            "Travel": 3400.00,
+            "Shopping": 2800.00,
+            "Bills": 2500.00,
+            "Entertainment": 1520.50
+        ]
     }
     
     // MARK: - Core Data Operations
@@ -44,6 +66,14 @@ class ExpenseTrackingViewModel: ObservableObject {
         recipientName: String? = nil,
         recipientPhone: String? = nil
     ) {
+        guard let persistenceController = persistenceController else {
+            // In preview mode, just update local data
+            monthlyExpenses += (type == .expense) ? amount : 0
+            monthlyIncome += (type == .income) ? amount : 0
+            monthlySavings = monthlyIncome - monthlyExpenses
+            return
+        }
+        
         let context = persistenceController.container.viewContext
         
         let transaction = ExpenseTransaction(context: context)
@@ -72,6 +102,12 @@ class ExpenseTrackingViewModel: ObservableObject {
     }
     
     func loadTransactions() {
+        guard let persistenceController = persistenceController else {
+            // In preview mode, return empty transactions
+            transactions = []
+            return
+        }
+        
         let context = persistenceController.container.viewContext
         let request: NSFetchRequest<ExpenseTransaction> = ExpenseTransaction.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(keyPath: \ExpenseTransaction.date, ascending: false)]
@@ -85,6 +121,11 @@ class ExpenseTrackingViewModel: ObservableObject {
     }
     
     func deleteTransaction(_ transaction: ExpenseTransaction) {
+        guard let persistenceController = persistenceController else {
+            // In preview mode, just return
+            return
+        }
+        
         let context = persistenceController.container.viewContext
         context.delete(transaction)
         

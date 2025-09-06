@@ -22,6 +22,11 @@ class AuthViewModel: ObservableObject {
     @Published var isSignUp = false
     
     private var verificationID: String?
+    private let isPreview: Bool
+    
+    init(isPreview: Bool = false) {
+        self.isPreview = isPreview
+    }
     
     enum AuthStep {
         case phoneInput
@@ -62,6 +67,15 @@ class AuthViewModel: ObservableObject {
     // MARK: - Send OTP
     private func sendOTP() async {
         isLoading = true
+        
+        if isPreview {
+            // For preview, simulate the flow without Firebase calls
+            try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second delay
+            verificationID = "preview_verification_id"
+            currentStep = .otpVerification
+            isLoading = false
+            return
+        }
         
         do {
             let result = try await PhoneAuthProvider.provider().verifyPhoneNumber(
@@ -116,6 +130,15 @@ class AuthViewModel: ObservableObject {
         
         isLoading = true
         
+        if isPreview {
+            // For preview, simulate successful OTP verification
+            try? await Task.sleep(nanoseconds: 500_000_000) // 0.5 second delay
+            isAuthenticated = true
+            currentStep = .completed
+            isLoading = false
+            return
+        }
+        
         do {
             let credential = PhoneAuthProvider.provider().credential(
                 withVerificationID: verificationID,
@@ -147,6 +170,12 @@ class AuthViewModel: ObservableObject {
     
     // MARK: - Check Auth Status
     func checkAuthStatus() async {
+        if isPreview {
+            // For preview, simulate not authenticated state
+            isAuthenticated = false
+            return
+        }
+        
         if let currentUser = Auth.auth().currentUser {
             isAuthenticated = true
         } else {
@@ -156,6 +185,13 @@ class AuthViewModel: ObservableObject {
     
     // MARK: - Sign Out
     func signOut() async {
+        if isPreview {
+            // For preview, just reset state
+            isAuthenticated = false
+            resetAuthState()
+            return
+        }
+        
         do {
             try Auth.auth().signOut()
             isAuthenticated = false

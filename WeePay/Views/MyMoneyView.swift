@@ -339,5 +339,5 @@ struct SettingsRow: View {
         MyMoneyView()
     }
     .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    .environmentObject(AuthStateManager())
+    .environmentObject(AuthStateManager(isPreview: true))
 }

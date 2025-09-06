@@ -72,7 +72,7 @@ struct SideMenuView: View {
                 
                 Spacer()
             }
-            .padding(.top, 50)
+            .padding(.top)
             .padding(.horizontal, 20)
             
             VStack(alignment: .leading, spacing: 8) {
@@ -129,5 +129,5 @@ struct MenuItemView: View {
         onFeedbackTap: {}
     )
     .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    .environmentObject(AuthStateManager())
+    .environmentObject(AuthStateManager(isPreview: true))
 }

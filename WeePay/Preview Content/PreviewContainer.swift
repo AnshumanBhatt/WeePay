@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 /// A container that provides the proper environment for SwiftUI previews
+/// This ensures Firebase and Core Data are properly configured for preview context
 struct PreviewContainer<Content: View>: View {
     let content: Content
     
@@ -19,7 +20,7 @@ struct PreviewContainer<Content: View>: View {
     var body: some View {
         content
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(AuthStateManager())
+            .environmentObject(AuthStateManager(isPreview: true))
     }
 }
 

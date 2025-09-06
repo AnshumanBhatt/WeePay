@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var expenseViewModel = ExpenseTrackingViewModel()
+    @StateObject private var expenseViewModel: ExpenseTrackingViewModel
     @State private var balance: Double = 12547.50
     @State private var showingSendMoney = false
     @State private var showingCheckBalance = false
@@ -19,6 +19,14 @@ struct HomeView: View {
     @State private var showingAddExpense = false
     @State private var showingExpenseDashboard = false
     @State private var navigationPath = NavigationPath()
+    
+    init() {
+        self._expenseViewModel = StateObject(wrappedValue: ExpenseTrackingViewModel())
+    }
+    
+    init(isPreview: Bool) {
+        self._expenseViewModel = StateObject(wrappedValue: ExpenseTrackingViewModel(isPreview: isPreview))
+    }
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
@@ -613,8 +621,8 @@ struct TransactionRow: View {
 
 #Preview {
     NavigationStack {
-        HomeView()
+        HomeView(isPreview: true)
     }
     .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    .environmentObject(AuthStateManager())
+    .environmentObject(AuthStateManager(isPreview: true))
 }
