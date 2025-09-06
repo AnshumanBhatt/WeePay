@@ -7,14 +7,15 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
     @StateObject private var expenseViewModel: ExpenseTrackingViewModel
-    @State private var balance: Double = 12547.50
+    @State private var bankCards: [BankCard] = BankCard.sampleCards
     @State private var showingSendMoney = false
     @State private var showingCheckBalance = false
     @State private var showingAddMoney = false
+    @State private var showingSendToSelf = false
     @State private var showingSideMenu = false
-    @State private var isBalanceHidden = false
     @State private var showingQRScanner = false
     @State private var showingAddExpense = false
     @State private var showingExpenseDashboard = false
@@ -36,11 +37,15 @@ struct HomeView: View {
                         // Header Section
                         headerSection
                         
-                        // Balance Card
-                        balanceCard
+                        // Card Carousel
+                        CardCarouselView(cards: bankCards)
                         
-                        // Action Card Panel
-                        actionCardPanel
+                        // Horizontal Actions Card
+                        HorizontalActionsCardAlt(
+                            onSendMoneyTap: { showingSendMoney = true },
+                            onCheckBalanceTap: { showingCheckBalance = true },
+                            onSendToSelfTap: { showingSendToSelf = true }
+                        )
                         
                         // Expense Summary Card
                         expenseSummaryCard
@@ -150,78 +155,6 @@ struct HomeView: View {
         .padding(.top, 10)
     }
     
-    private var balanceCard: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                Text("Current Balance")
-                    .font(.headline)
-                    .foregroundColor(.textSecondary)
-                
-                Spacer()
-                
-                Button(action: {
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        isBalanceHidden.toggle()
-                    }
-                }) {
-                    Image(systemName: isBalanceHidden ? "eye" : "eye.slash")
-                        .font(.title3)
-                        .foregroundColor(.primaryGreen)
-                }
-            }
-            
-            Text(isBalanceHidden ? "₹ ----" : "₹\(balance, specifier: "%.2f")")
-                .font(.system(size: 36, weight: .bold, design: .rounded))
-                .foregroundColor(.textPrimary)
-        }
-        .padding(24)
-        .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .shadow(color: .gray.opacity(0.1), radius: 8, x: 0, y: 4)
-    }
-    
-    private var actionCardPanel: some View {
-        VStack(spacing: 16) {
-            Text("Quick Actions")
-                .font(.headline)
-                .foregroundColor(.textPrimary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            VStack(spacing: 12) {
-                // Send Money Button
-                ActionButton(
-                    title: "Send Money",
-                    subtitle: "Transfer to phone number",
-                    icon: "paperplane.fill",
-                    backgroundColor: .primaryGreen,
-                    action: { showingSendMoney = true }
-                )
-                
-                // Check Balance Button
-                ActionButton(
-                    title: "Check Balance",
-                    subtitle: "View account balance",
-                    icon: "creditcard.fill",
-                    backgroundColor: .accentGreen,
-                    action: { showingCheckBalance = true }
-                )
-                
-                // Add Money Button
-                ActionButton(
-                    title: "Add Money",
-                    subtitle: "Top up your wallet",
-                    icon: "plus.circle.fill",
-                    backgroundColor: .mintGreen,
-                    textColor: .accentGreen,
-                    action: { showingAddMoney = true }
-                )
-            }
-        }
-        .padding(20)
-        .background(Color.cardBackground)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .shadow(color: .gray.opacity(0.1), radius: 8, x: 0, y: 4)
-    }
     
     private var servicesSection: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -616,6 +549,310 @@ struct TransactionRow: View {
                     .foregroundColor(.textSecondary)
             }
         }
+    }
+}
+
+// MARK: - BankCardView
+struct BankCardView: View {
+    let card: BankCard
+    @State private var isBalanceHidden = false
+    
+    var body: some View {
+        ZStack {
+            // Card Background with Gradient
+            LinearGradient(
+                gradient: Gradient(colors: card.gradientColors),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            
+            // Card Pattern/Texture Overlay
+            RoundedRectangle(cornerRadius: 16)
+                .fill(
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            Color.white.opacity(0.1),
+                            Color.clear,
+                            Color.black.opacity(0.1)
+                        ]),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+            
+            // Card Content
+            VStack(alignment: .leading, spacing: 0) {
+                // Top Row - Bank Name and Card Type
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(card.bankName)
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(card.textColor)
+                        
+                        Text(card.cardType.rawValue.uppercased())
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundColor(card.textColor.opacity(0.8))
+                    }
+                    
+                    Spacer()
+                    
+                    // Bank Logo Placeholder or Chip
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(Color.white.opacity(0.9))
+                        .frame(width: 32, height: 24)
+                        .overlay(
+                            Image(systemName: "creditcard.fill")
+                                .font(.system(size: 12))
+                                .foregroundColor(.gray)
+                        )
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 16)
+                
+                Spacer()
+                
+                // Balance Section
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Text("Available Balance")
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundColor(card.textColor.opacity(0.8))
+                        
+                        Button(action: {
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                isBalanceHidden.toggle()
+                            }
+                        }) {
+                            Image(systemName: isBalanceHidden ? "eye" : "eye.slash")
+                                .font(.system(size: 10))
+                                .foregroundColor(card.textColor.opacity(0.7))
+                        }
+                        
+                        Spacer()
+                    }
+                    
+                    Text(isBalanceHidden ? "₹ ••••••" : "₹\(card.balance, specifier: "%.2f")")
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .foregroundColor(card.textColor)
+                }
+                .padding(.horizontal, 20)
+                
+                Spacer()
+                
+                // Bottom Row - Card Number and Expiry
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(card.maskedCardNumber)
+                        .font(.system(size: 16, weight: .medium, design: .monospaced))
+                        .foregroundColor(card.textColor)
+                        .tracking(1.5)
+                    
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("CARD HOLDER")
+                                .font(.system(size: 8, weight: .medium))
+                                .foregroundColor(card.textColor.opacity(0.7))
+                            
+                            Text(card.cardHolderName)
+                                .font(.system(size: 11, weight: .semibold))
+                                .foregroundColor(card.textColor)
+                        }
+                        
+                        Spacer()
+                        
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("VALID THRU")
+                                .font(.system(size: 8, weight: .medium))
+                                .foregroundColor(card.textColor.opacity(0.7))
+                            
+                            Text(card.expiryDate)
+                                .font(.system(size: 11, weight: .semibold))
+                                .foregroundColor(card.textColor)
+                        }
+                        
+                        // Card Network Logo (Visa/Mastercard placeholder)
+                        RoundedRectangle(cornerRadius: 4)
+                            .fill(Color.white)
+                            .frame(width: 40, height: 24)
+                            .overlay(
+                                Text(card.cardType == .credit ? "VISA" : "MC")
+                                    .font(.system(size: 8, weight: .bold))
+                                    .foregroundColor(.blue)
+                            )
+                    }
+                }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 16)
+            }
+        }
+        .frame(height: 200)
+        .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
+    }
+}
+
+// MARK: - CardCarouselView
+struct CardCarouselView: View {
+    let cards: [BankCard]
+    @State private var currentCardIndex = 0
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            // Card Carousel
+            TabView(selection: $currentCardIndex) {
+                ForEach(cards.indices, id: \.self) { index in
+                    BankCardView(card: cards[index])
+                        .padding(.horizontal, 4)
+                        .tag(index)
+                }
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .frame(height: 200)
+            .animation(.easeInOut(duration: 0.4), value: currentCardIndex)
+            
+            // Custom Page Indicators
+            HStack(spacing: 8) {
+                ForEach(cards.indices, id: \.self) { index in
+                    Circle()
+                        .fill(index == currentCardIndex ? Color.primaryGreen : Color.gray.opacity(0.3))
+                        .frame(width: 8, height: 8)
+                        .scaleEffect(index == currentCardIndex ? 1.2 : 1.0)
+                        .animation(.easeInOut(duration: 0.3), value: currentCardIndex)
+                }
+            }
+            .padding(.bottom, 8)
+            
+            // Card Info
+            if !cards.isEmpty {
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(cards[currentCardIndex].bankName)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.textPrimary)
+                        
+                        Text("\(cards[currentCardIndex].cardType.rawValue) Card")
+                            .font(.caption)
+                            .foregroundColor(.textSecondary)
+                    }
+                    
+                    Spacer()
+                    
+                    // Quick Balance Toggle for Current Card
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text("Current Balance")
+                            .font(.caption)
+                            .foregroundColor(.textSecondary)
+                        
+                        Text("₹\(cards[currentCardIndex].balance, specifier: "%.2f")")
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.primaryGreen)
+                    }
+                }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 12)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .shadow(color: .gray.opacity(0.1), radius: 4, x: 0, y: 2)
+            }
+        }
+    }
+}
+
+// MARK: - HorizontalActionsCard
+struct HorizontalActionsCardAlt: View {
+    let onSendMoneyTap: () -> Void
+    let onCheckBalanceTap: () -> Void
+    let onSendToSelfTap: () -> Void
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            // Header
+            HStack {
+                Text("Money Transfer")
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.textPrimary)
+                
+                Spacer()
+                
+                Button("View All") {
+                    // Handle view all action
+                }
+                .font(.caption)
+                .foregroundColor(.primaryGreen)
+            }
+            .padding(.horizontal, 20)
+            .padding(.top, 16)
+            .padding(.bottom, 12)
+            
+            // Horizontal Buttons
+            HStack(spacing: 0) {
+                ActionButtonCompact(
+                    title: "Send Money",
+                    subtitle: "To any number",
+                    icon: "paperplane.fill",
+                    action: onSendMoneyTap
+                )
+                
+                Divider()
+                    .frame(height: 60)
+                
+                ActionButtonCompact(
+                    title: "Check Balance",
+                    subtitle: "View details",
+                    icon: "eye.fill",
+                    action: onCheckBalanceTap
+                )
+                
+                Divider()
+                    .frame(height: 60)
+                
+                ActionButtonCompact(
+                    title: "Self Transfer",
+                    subtitle: "Between accounts",
+                    icon: "arrow.2.squarepath",
+                    action: onSendToSelfTap
+                )
+            }
+            .padding(.horizontal, 20)
+            .padding(.bottom, 16)
+        }
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .shadow(color: .gray.opacity(0.1), radius: 8, x: 0, y: 4)
+    }
+}
+
+struct ActionButtonCompact: View {
+    let title: String
+    let subtitle: String
+    let icon: String
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 8) {
+                Image(systemName: icon)
+                    .font(.system(size: 20, weight: .medium))
+                    .foregroundColor(.primaryGreen)
+                    .frame(width: 32, height: 32)
+                
+                VStack(spacing: 2) {
+                    Text(title)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundColor(.textPrimary)
+                    
+                    Text(subtitle)
+                        .font(.system(size: 10, weight: .regular))
+                        .foregroundColor(.textSecondary)
+                }
+                .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+        }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 

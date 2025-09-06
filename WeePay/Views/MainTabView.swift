@@ -26,7 +26,7 @@ struct MainTabView: View {
                 }
                 .tag(1)
             
-            QRScannerView()
+            QRCodeScannerView()
                 .tabItem {
                     Image(systemName: "qrcode.viewfinder")
                     Text("QR Scanner")
