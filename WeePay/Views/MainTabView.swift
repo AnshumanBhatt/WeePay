@@ -17,7 +17,7 @@ struct MainTabView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-                .tag(0)
+                .tag(0)   
             
             HistoryView()
                 .tabItem {

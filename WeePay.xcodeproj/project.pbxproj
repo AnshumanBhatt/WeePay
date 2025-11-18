@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02AB2B5B2ECC360900733ECE /* Pods_WeePay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F833D5EF152285532151751B /* Pods_WeePay.framework */; };
+		02AB2B5C2ECC360900733ECE /* Pods_WeePay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F833D5EF152285532151751B /* Pods_WeePay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		02DC2C672E431E8B00962968 /* FirebaseAI in Frameworks */ = {isa = PBXBuildFile; productRef = 02DC2C662E431E8B00962968 /* FirebaseAI */; };
 		02DC2C692E431E8B00962968 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 02DC2C682E431E8B00962968 /* FirebaseAnalytics */; };
 		02DC2C6B2E431E8B00962968 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 02DC2C6A2E431E8B00962968 /* FirebaseAnalyticsCore */; };
@@ -30,6 +32,11 @@
 		02DC2C8F2E431E8B00962968 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 02DC2C8E2E431E8B00962968 /* FirebaseRemoteConfig */; };
 		02DC2C912E431E8B00962968 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 02DC2C902E431E8B00962968 /* FirebaseStorage */; };
 		02DC2C932E431E8B00962968 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 02DC2C922E431E8B00962968 /* FirebaseStorageCombine-Community */; };
+		02E7AFA92EB8BC110036CCDB /* WeePayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E7AFA72EB8BC110036CCDB /* WeePayTests.swift */; };
+		02E7AFAD2EB8BC140036CCDB /* WeePayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E7AFAA2EB8BC140036CCDB /* WeePayUITests.swift */; };
+		02E7AFAE2EB8BC140036CCDB /* WeePayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E7AFAB2EB8BC140036CCDB /* WeePayUITestsLaunchTests.swift */; };
+		8BEA58453AF4DCB7ADCF2028 /* Pods_WeePay_WeePayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679B80A4DFBAF073CA854AB5 /* Pods_WeePay_WeePayUITests.framework */; };
+		C6411A51081E20CCFDEA32A1 /* Pods_WeePayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B6BCCC122BFE27171709A0 /* Pods_WeePayTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,73 +56,97 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		02AB2B5D2ECC360900733ECE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				02AB2B5C2ECC360900733ECE /* Pods_WeePay.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		013AB500230B947689B9906E /* Pods-WeePay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeePay.release.xcconfig"; path = "Target Support Files/Pods-WeePay/Pods-WeePay.release.xcconfig"; sourceTree = "<group>"; };
 		02522FE02E266ECC0076AA46 /* WeePay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeePay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02522FF52E266ECF0076AA46 /* WeePayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeePayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02522FFF2E266ECF0076AA46 /* WeePayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeePayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02E7AFA72EB8BC110036CCDB /* WeePayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeePayTests.swift; sourceTree = "<group>"; };
+		02E7AFAA2EB8BC140036CCDB /* WeePayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeePayUITests.swift; sourceTree = "<group>"; };
+		02E7AFAB2EB8BC140036CCDB /* WeePayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeePayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		47CA5254F30AB4F4081480C0 /* Pods-WeePayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeePayTests.debug.xcconfig"; path = "Target Support Files/Pods-WeePayTests/Pods-WeePayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4AA198C3E7502571887895F9 /* Pods-WeePay-WeePayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeePay-WeePayUITests.release.xcconfig"; path = "Target Support Files/Pods-WeePay-WeePayUITests/Pods-WeePay-WeePayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4DA6E9954B9385308531AFBA /* Pods-WeePay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeePay.debug.xcconfig"; path = "Target Support Files/Pods-WeePay/Pods-WeePay.debug.xcconfig"; sourceTree = "<group>"; };
+		679B80A4DFBAF073CA854AB5 /* Pods_WeePay_WeePayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeePay_WeePayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC562CDE9BE6F8848F7D608 /* Pods-WeePay-WeePayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeePay-WeePayUITests.debug.xcconfig"; path = "Target Support Files/Pods-WeePay-WeePayUITests/Pods-WeePay-WeePayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0B6BCCC122BFE27171709A0 /* Pods_WeePayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeePayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF91279E456645C860FEF696 /* Pods-WeePayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeePayTests.release.xcconfig"; path = "Target Support Files/Pods-WeePayTests/Pods-WeePayTests.release.xcconfig"; sourceTree = "<group>"; };
+		F833D5EF152285532151751B /* Pods_WeePay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeePay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		020F9C8F2E6C06F800ED9779 /* Exceptions for "WeePay" folder in "WeePay" target */ = {
+		02769BC22ECB4E510097FB16 /* Exceptions for "WeePay" folder in "WeePay" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = 02522FDF2E266ECC0076AA46 /* WeePay */;
 		};
-		020F9C902E6C06F800ED9779 /* Exceptions for "WeePay" folder in "WeePayTests" target */ = {
+		02769BC32ECB4E510097FB16 /* Exceptions for "WeePay" folder in "WeePayTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				AppDelegate.swift,
+				Config/RazorpayConfig.swift,
 				"GoogleService-Info.plist",
 				Models/BankCard.swift,
 				Models/ExpenseCategoryModel.swift,
+				Podfile,
 				"Preview Content/PreviewContainer.swift",
+				Services/RazorpayPaymentService.swift,
 				ViewModels/ExpenseTrackingViewModel.swift,
 				Views/Expenses/AddExpenseView.swift,
 				Views/Expenses/CategoryPickerView.swift,
 				Views/Expenses/ExpenseDashboardView.swift,
 				Views/Expenses/PaymentMethodPickerView.swift,
+				Views/PaymentView.swift,
 			);
 			target = 02522FF42E266ECF0076AA46 /* WeePayTests */;
 		};
-		020F9C912E6C06F800ED9779 /* Exceptions for "WeePay" folder in "WeePayUITests" target */ = {
+		02769BC42ECB4E510097FB16 /* Exceptions for "WeePay" folder in "WeePayUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				AppDelegate.swift,
+				Config/RazorpayConfig.swift,
 				"GoogleService-Info.plist",
 				Models/BankCard.swift,
 				Models/ExpenseCategoryModel.swift,
+				Podfile,
 				"Preview Content/PreviewContainer.swift",
+				Services/RazorpayPaymentService.swift,
 				ViewModels/ExpenseTrackingViewModel.swift,
 				Views/Expenses/AddExpenseView.swift,
 				Views/Expenses/CategoryPickerView.swift,
 				Views/Expenses/ExpenseDashboardView.swift,
 				Views/Expenses/PaymentMethodPickerView.swift,
+				Views/PaymentView.swift,
 			);
 			target = 02522FFE2E266ECF0076AA46 /* WeePayUITests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		020F9C542E6C06F800ED9779 /* WeePay */ = {
+		02769B7B2ECB4E500097FB16 /* WeePay */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				020F9C8F2E6C06F800ED9779 /* Exceptions for "WeePay" folder in "WeePay" target */,
-				020F9C902E6C06F800ED9779 /* Exceptions for "WeePay" folder in "WeePayTests" target */,
-				020F9C912E6C06F800ED9779 /* Exceptions for "WeePay" folder in "WeePayUITests" target */,
+				02769BC22ECB4E510097FB16 /* Exceptions for "WeePay" folder in "WeePay" target */,
+				02769BC32ECB4E510097FB16 /* Exceptions for "WeePay" folder in "WeePayTests" target */,
+				02769BC42ECB4E510097FB16 /* Exceptions for "WeePay" folder in "WeePayUITests" target */,
 			);
 			path = WeePay;
-			sourceTree = "<group>";
-		};
-		0231AE1A2E6C02300005339D /* WeePayUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WeePayUITests;
-			sourceTree = "<group>";
-		};
-		0231AE1E2E6C02330005339D /* WeePayTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WeePayTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -126,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02DC2C892E431E8B00962968 /* FirebaseMessaging in Frameworks */,
+				02AB2B5B2ECC360900733ECE /* Pods_WeePay.framework in Frameworks */,
 				02DC2C7F2E431E8B00962968 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				02DC2C672E431E8B00962968 /* FirebaseAI in Frameworks */,
 				02DC2C772E431E8B00962968 /* FirebaseCore in Frameworks */,
@@ -155,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6411A51081E20CCFDEA32A1 /* Pods_WeePayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEA58453AF4DCB7ADCF2028 /* Pods_WeePay_WeePayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,10 +205,12 @@
 		02522FD72E266ECC0076AA46 = {
 			isa = PBXGroup;
 			children = (
-				020F9C542E6C06F800ED9779 /* WeePay */,
-				0231AE1E2E6C02330005339D /* WeePayTests */,
-				0231AE1A2E6C02300005339D /* WeePayUITests */,
+				02769B7B2ECB4E500097FB16 /* WeePay */,
+				02E7AFA82EB8BC110036CCDB /* WeePayTests */,
+				02E7AFAC2EB8BC140036CCDB /* WeePayUITests */,
 				02522FE12E266ECC0076AA46 /* Products */,
+				5428B4EC1DF89E3F8DA5AD28 /* Pods */,
+				9613AB61475E861207500E34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +224,46 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		02E7AFA82EB8BC110036CCDB /* WeePayTests */ = {
+			isa = PBXGroup;
+			children = (
+				02E7AFA72EB8BC110036CCDB /* WeePayTests.swift */,
+			);
+			path = WeePayTests;
+			sourceTree = "<group>";
+		};
+		02E7AFAC2EB8BC140036CCDB /* WeePayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				02E7AFAA2EB8BC140036CCDB /* WeePayUITests.swift */,
+				02E7AFAB2EB8BC140036CCDB /* WeePayUITestsLaunchTests.swift */,
+			);
+			path = WeePayUITests;
+			sourceTree = "<group>";
+		};
+		5428B4EC1DF89E3F8DA5AD28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DA6E9954B9385308531AFBA /* Pods-WeePay.debug.xcconfig */,
+				013AB500230B947689B9906E /* Pods-WeePay.release.xcconfig */,
+				8BC562CDE9BE6F8848F7D608 /* Pods-WeePay-WeePayUITests.debug.xcconfig */,
+				4AA198C3E7502571887895F9 /* Pods-WeePay-WeePayUITests.release.xcconfig */,
+				47CA5254F30AB4F4081480C0 /* Pods-WeePayTests.debug.xcconfig */,
+				EF91279E456645C860FEF696 /* Pods-WeePayTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9613AB61475E861207500E34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F833D5EF152285532151751B /* Pods_WeePay.framework */,
+				679B80A4DFBAF073CA854AB5 /* Pods_WeePay_WeePayUITests.framework */,
+				B0B6BCCC122BFE27171709A0 /* Pods_WeePayTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,16 +271,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 025230092E266ECF0076AA46 /* Build configuration list for PBXNativeTarget "WeePay" */;
 			buildPhases = (
+				8CE4712AAE2E07B941132FC8 /* [CP] Check Pods Manifest.lock */,
 				02522FDC2E266ECC0076AA46 /* Sources */,
 				02522FDD2E266ECC0076AA46 /* Frameworks */,
 				02522FDE2E266ECC0076AA46 /* Resources */,
+				811B39ED958169A18C2FC218 /* [CP] Embed Pods Frameworks */,
+				02AB2B5D2ECC360900733ECE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				020F9C542E6C06F800ED9779 /* WeePay */,
+				02769B7B2ECB4E500097FB16 /* WeePay */,
 			);
 			name = WeePay;
 			packageProductDependencies = (
@@ -240,6 +319,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0252300C2E266ECF0076AA46 /* Build configuration list for PBXNativeTarget "WeePayTests" */;
 			buildPhases = (
+				BC6090A821AB86ACC6612EFB /* [CP] Check Pods Manifest.lock */,
 				02522FF12E266ECF0076AA46 /* Sources */,
 				02522FF22E266ECF0076AA46 /* Frameworks */,
 				02522FF32E266ECF0076AA46 /* Resources */,
@@ -249,12 +329,7 @@
 			dependencies = (
 				02522FF72E266ECF0076AA46 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				0231AE1E2E6C02330005339D /* WeePayTests */,
-			);
 			name = WeePayTests;
-			packageProductDependencies = (
-			);
 			productName = WeePayTests;
 			productReference = 02522FF52E266ECF0076AA46 /* WeePayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -263,21 +338,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0252300F2E266ECF0076AA46 /* Build configuration list for PBXNativeTarget "WeePayUITests" */;
 			buildPhases = (
+				80EC9ECFC87B2AA6ABC8F766 /* [CP] Check Pods Manifest.lock */,
 				02522FFB2E266ECF0076AA46 /* Sources */,
 				02522FFC2E266ECF0076AA46 /* Frameworks */,
 				02522FFD2E266ECF0076AA46 /* Resources */,
+				21E0529ADB109B13AC7EFA72 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				025230012E266ECF0076AA46 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				0231AE1A2E6C02300005339D /* WeePayUITests */,
-			);
 			name = WeePayUITests;
-			packageProductDependencies = (
-			);
 			productName = WeePayUITests;
 			productReference = 02522FFF2E266ECF0076AA46 /* WeePayUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -353,6 +425,117 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21E0529ADB109B13AC7EFA72 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeePay-WeePayUITests/Pods-WeePay-WeePayUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeePay-WeePayUITests/Pods-WeePay-WeePayUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeePay-WeePayUITests/Pods-WeePay-WeePayUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80EC9ECFC87B2AA6ABC8F766 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeePay-WeePayUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		811B39ED958169A18C2FC218 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeePay/Pods-WeePay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeePay/Pods-WeePay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeePay/Pods-WeePay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CE4712AAE2E07B941132FC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeePay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC6090A821AB86ACC6612EFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeePayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		02522FDC2E266ECC0076AA46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -365,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E7AFA92EB8BC110036CCDB /* WeePayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +556,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E7AFAD2EB8BC140036CCDB /* WeePayUITests.swift in Sources */,
+				02E7AFAE2EB8BC140036CCDB /* WeePayUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +614,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -451,6 +637,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -491,7 +678,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -506,20 +693,23 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		0252300A2E266ECF0076AA46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DA6E9954B9385308531AFBA /* Pods-WeePay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WeePay/WeePay.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeePay/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9K8W3QHCX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeePay/Info.plist;
@@ -537,22 +727,25 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Anshuman.WeePay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		0252300B2E266ECF0076AA46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 013AB500230B947689B9906E /* Pods-WeePay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WeePay/WeePay.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeePay/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9K8W3QHCX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeePay/Info.plist;
@@ -570,18 +763,21 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Anshuman.WeePay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		0252300D2E266ECF0076AA46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47CA5254F30AB4F4081480C0 /* Pods-WeePayTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 873C79DZCG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -596,10 +792,12 @@
 		};
 		0252300E2E266ECF0076AA46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF91279E456645C860FEF696 /* Pods-WeePayTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 873C79DZCG;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
@@ -614,9 +812,11 @@
 		};
 		025230102E266ECF0076AA46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BC562CDE9BE6F8848F7D608 /* Pods-WeePay-WeePayUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 873C79DZCG;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Anshuman.WeePayUITests;
@@ -630,9 +830,11 @@
 		};
 		025230112E266ECF0076AA46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AA198C3E7502571887895F9 /* Pods-WeePay-WeePayUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 873C79DZCG;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Anshuman.WeePayUITests;

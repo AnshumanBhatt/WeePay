@@ -13,12 +13,22 @@ struct QRCodeScannerView: View {
     @State private var scannedCode: String = ""
     @State private var showingAlert = false
     @State private var alertMessage = ""
+    @State private var showingPaymentSheet = false
+    @State private var paymentDetails: PaymentDetails?
+    @State private var shouldRestartCamera = false
     
     var body: some View {
         NavigationView {
             ZStack {
                 // Camera view
-                QRScannerCameraView(scannedCode: $scannedCode, showingAlert: $showingAlert, alertMessage: $alertMessage)
+                QRScannerCameraView(
+                    scannedCode: $scannedCode, 
+                    showingAlert: $showingAlert, 
+                    alertMessage: $alertMessage,
+                    showingPaymentSheet: $showingPaymentSheet,
+                    paymentDetails: $paymentDetails,
+                    shouldRestartCamera: $shouldRestartCamera
+                )
                     .ignoresSafeArea()
                 
                 // Overlay UI
@@ -103,6 +113,22 @@ struct QRCodeScannerView: View {
         } message: {
             Text(alertMessage)
         }
+        .sheet(isPresented: $showingPaymentSheet) {
+            if let details = paymentDetails {
+                PaymentView(paymentDetails: details) {
+                    shouldRestartCamera = true
+                    showingPaymentSheet = false
+                }
+            }
+        }
+        .onChange(of: shouldRestartCamera) { _ in
+            if shouldRestartCamera {
+                shouldRestartCamera = false
+                // Reset scanner state
+                scannedCode = ""
+                paymentDetails = nil
+            }
+        }
     }
 }
 
@@ -111,6 +137,9 @@ struct QRScannerCameraView: UIViewRepresentable {
     @Binding var scannedCode: String
     @Binding var showingAlert: Bool
     @Binding var alertMessage: String
+    @Binding var showingPaymentSheet: Bool
+    @Binding var paymentDetails: PaymentDetails?
+    @Binding var shouldRestartCamera: Bool
     
     func makeUIView(context: Context) -> UIView {
         let view = UIView()
@@ -163,6 +192,11 @@ struct QRScannerCameraView: UIViewRepresentable {
     func updateUIView(_ uiView: UIView, context: Context) {
         guard let previewLayer = context.coordinator.previewLayer else { return }
         previewLayer.frame = uiView.layer.bounds
+        
+        // Restart camera if needed
+        if shouldRestartCamera {
+            context.coordinator.restartCamera()
+        }
     }
     
     func makeCoordinator() -> Coordinator {
@@ -173,27 +207,47 @@ struct QRScannerCameraView: UIViewRepresentable {
         let parent: QRScannerCameraView
         var captureSession: AVCaptureSession?
         var previewLayer: AVCaptureVideoPreviewLayer?
+        var hasScanned = false
         
         init(_ parent: QRScannerCameraView) {
             self.parent = parent
         }
         
         func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+            // Prevent multiple scans
+            if hasScanned { return }
+            
             if let metadataObject = metadataObjects.first {
                 guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
                 guard let stringValue = readableObject.stringValue else { return }
                 
+                hasScanned = true
                 AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
                 
-                DispatchQueue.main.async {
-                    self.parent.scannedCode = stringValue
+                self.parent.scannedCode = stringValue
+                
+                // Check if this is a valid Razorpay payment QR code
+                if RazorpayConfig.validateQRCode(stringValue) {
+                    if let details = RazorpayConfig.extractPaymentDetails(from: stringValue) {
+                        self.parent.paymentDetails = details
+                        self.parent.showingPaymentSheet = true
+                    } else {
+                        self.parent.alertMessage = "Invalid payment QR code format"
+                        self.parent.showingAlert = true
+                    }
+                } else {
                     self.parent.alertMessage = "Scanned: \(stringValue)"
                     self.parent.showingAlert = true
-                    
-                    // Stop the capture session
-                    self.captureSession?.stopRunning()
                 }
+                
+                // Stop the capture session
+                self.captureSession?.stopRunning()
             }
+        }
+        
+        func restartCamera() {
+            hasScanned = false
+            captureSession?.startRunning()
         }
     }
 }

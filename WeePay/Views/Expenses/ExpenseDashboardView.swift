@@ -12,6 +12,7 @@ struct ExpenseDashboardView: View {
     @StateObject private var expenseViewModel = ExpenseTrackingViewModel()
     @State private var selectedTimeRange: TimeRange = .thisMonth
     @State private var showingAddExpense = false
+    @Environment(\.presentationMode) var presentationMode
     
     enum TimeRange: String, CaseIterable {
         case thisWeek = "This Week"
@@ -69,6 +70,20 @@ struct ExpenseDashboardView: View {
     
     private var headerSection: some View {
         HStack {
+            // Back button
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.textPrimary)
+                    .padding(12)
+                    .background(Color.white)
+                    .clipShape(Circle())
+                    .shadow(color: .gray.opacity(0.2), radius: 4, x: 0, y: 2)
+            }
+            
             VStack(alignment: .leading, spacing: 4) {
                 Text("Expense Overview")
                     .font(.largeTitle)

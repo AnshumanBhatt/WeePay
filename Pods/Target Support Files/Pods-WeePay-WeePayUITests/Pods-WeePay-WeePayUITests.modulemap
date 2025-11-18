@@ -1,0 +1,6 @@
+framework module Pods_WeePay_WeePayUITests {
+  umbrella header "Pods-WeePay-WeePayUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

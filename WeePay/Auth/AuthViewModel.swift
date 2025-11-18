@@ -132,7 +132,7 @@ class AuthViewModel: ObservableObject {
         
         if isPreview {
             // For preview, simulate successful OTP verification
-            try? await Task.sleep(nanoseconds: 500_000_000) // 0.5 second delay
+            try? await Task.sleep(nanoseconds: 500_000_000) 
             isAuthenticated = true
             currentStep = .completed
             isLoading = false
@@ -165,7 +165,11 @@ class AuthViewModel: ObservableObject {
     private func updateUserProfile(user: User) async throws {
         let changeRequest = user.createProfileChangeRequest()
         changeRequest.displayName = name
-        try await changeRequest.commitChanges()
+        
+        try await Task{
+           try await changeRequest.commitChanges()
+            
+        }.value
     }
     
     // MARK: - Check Auth Status

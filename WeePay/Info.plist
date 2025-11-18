@@ -24,6 +24,16 @@
 				<string>Anshuman.WeePay</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>razorpay</string>
+			<key>CFBundleURLRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>rzp</string>
+			</array>
+		</dict>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
@@ -31,5 +41,7 @@
 	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>NSCameraUsageDescription</key>
+	<string>This app uses the camera to scan QR codes for payments.</string>
 </dict>
 </plist>

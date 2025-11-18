@@ -40,6 +40,7 @@ class AuthStateManager: ObservableObject {
         }
     }
     
+    @MainActor
     deinit {
         if let listener = authListener {
             Auth.auth().removeStateDidChangeListener(listener)

@@ -1,0 +1,1077 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		0A1CC38B57BF7987D9DDA7A1CE4F117E /* razorpay-core-pod */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D7AAB671052D515B550C277012BF5F4F /* Build configuration list for PBXAggregateTarget "razorpay-core-pod" */;
+			buildPhases = (
+				02323EC498B47C126EE3F67563C69FD5 /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+			);
+			name = "razorpay-core-pod";
+		};
+		84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B54C0ACA006E5EEAB781E8D9C809774D /* Build configuration list for PBXAggregateTarget "razorpay-pod" */;
+			buildPhases = (
+				9B0C12FF9961C3449066BE1F1E2CA2D1 /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+				5908021981B15328D9491C9AB6E871E5 /* PBXTargetDependency */,
+			);
+			name = "razorpay-pod";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		28254D9798274E4DDA56363C4EA7A012 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		33D428789247BAEE4A5B310E76891CCC /* Pods-WeePay-WeePayUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD16C6E22A5C97B9401815DCC7E41443 /* Pods-WeePay-WeePayUITests-dummy.m */; };
+		5BC6576DAED4490F705D7609AB128163 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		6CF2F3D4B9E07A8EF08652CF51A5AE16 /* Pods-WeePay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D69D992FFD7C9956413443B9F043BB /* Pods-WeePay-dummy.m */; };
+		6DB3F590B42602E558819B677E314E6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		7FDD8967F219C5E37C951F0101D8FA81 /* Pods-WeePay-WeePayUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5126A575C63FF5F6AEF5D6248D714D0 /* Pods-WeePay-WeePayUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85FB820B2CFCBF2BBAACAA981CCF63A9 /* Pods-WeePayTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F479239B9F30F40A410616E1A075CC /* Pods-WeePayTests-dummy.m */; };
+		CA924F590EED406FFDF4ABDB591D89DB /* Pods-WeePay-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18F7922C5DFBE080A0EFA40BB58B1FBE /* Pods-WeePay-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC3464B6E57B6A7C076CD3F896AE4070 /* Pods-WeePayTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 757F4259F15BEF788ED46DCCF7AAA0A6 /* Pods-WeePayTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13FBC73C9321FE63F80BD2B900DF9879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
+			remoteInfo = "razorpay-pod";
+		};
+		3A15E599158784C9F77659B7DB873204 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A1CC38B57BF7987D9DDA7A1CE4F117E;
+			remoteInfo = "razorpay-core-pod";
+		};
+		769C501753199073C0DD418160920D86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
+			remoteInfo = "razorpay-pod";
+		};
+		9A75205ECFC91D016C75AC9A34B8D7F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A1CC38B57BF7987D9DDA7A1CE4F117E;
+			remoteInfo = "razorpay-core-pod";
+		};
+		C1D028E28CB6CDB2459F1867A9E9E344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 059689ED4AD7C3C0CDAC51C68C244301;
+			remoteInfo = "Pods-WeePay";
+		};
+		FF41944DCE255C5082F082ABA473CEB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A1CC38B57BF7987D9DDA7A1CE4F117E;
+			remoteInfo = "razorpay-core-pod";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		099FD87E3E047F651444BDDD1CC75D83 /* razorpay-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.debug.xcconfig"; sourceTree = "<group>"; };
+		110102E4ED8AEAD5BDA3F89D6D4D47BD /* Razorpay.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = Razorpay.xcframework; path = Pod/core/Razorpay.xcframework; sourceTree = "<group>"; };
+		173D33CF3A9E8C412A5438D63503A16C /* Pods-WeePay-WeePayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeePay-WeePayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1775804E903A66D4935454F9CF97BE40 /* Pods-WeePay-WeePayUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeePay-WeePayUITests-Info.plist"; sourceTree = "<group>"; };
+		18F7922C5DFBE080A0EFA40BB58B1FBE /* Pods-WeePay-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeePay-umbrella.h"; sourceTree = "<group>"; };
+		200EE2FA57DF0AC9756CF6B0BDB2CE10 /* Pods-WeePayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeePayTests.release.xcconfig"; sourceTree = "<group>"; };
+		21ECC14A7FA2CA8B4746EEC97B3F4D17 /* RazorpayCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = RazorpayCore.xcframework; path = Pod/core/RazorpayCore.xcframework; sourceTree = "<group>"; };
+		26E8BED754A2B43DECDF48FCF7093B9D /* Pods-WeePayTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-WeePayTests"; path = Pods_WeePayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC527F17901FD9E74F528936E026E13 /* Pods-WeePayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeePayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3384AAF6E26862710D86A1CD660BBCCD /* Pods-WeePayTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeePayTests-Info.plist"; sourceTree = "<group>"; };
+		384A992EC99EB53B16CA59520166F333 /* Pods-WeePayTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WeePayTests.modulemap"; sourceTree = "<group>"; };
+		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3AE7BB28271EABB57B6C6E7DFE316D9F /* Pods-WeePay-WeePayUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeePay-WeePayUITests-frameworks.sh"; sourceTree = "<group>"; };
+		457EC7ABE6309B0D003DC1E40EAE11BF /* Pods-WeePay-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeePay-Info.plist"; sourceTree = "<group>"; };
+		45EDD84C4A8B3D9629918BD696514348 /* Pods-WeePayTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeePayTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		54D69D992FFD7C9956413443B9F043BB /* Pods-WeePay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeePay-dummy.m"; sourceTree = "<group>"; };
+		5CD0061210A2D9E19AF6CFA4772B9D84 /* razorpay-pod-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "razorpay-pod-xcframeworks.sh"; sourceTree = "<group>"; };
+		757F4259F15BEF788ED46DCCF7AAA0A6 /* Pods-WeePayTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeePayTests-umbrella.h"; sourceTree = "<group>"; };
+		7852D442EA03027D4B51503DF35C12BA /* Pods-WeePay-WeePayUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeePay-WeePayUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7CD8851FCB54DFCE4CC0370A363589AE /* Pods-WeePayTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeePayTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		82D3228CF7C0FEBBCAF64F961B4021FD /* Pods-WeePay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeePay.release.xcconfig"; sourceTree = "<group>"; };
+		8955FB42CBB83AE7BCC073DEFA8B45E7 /* Pods-WeePay-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeePay-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9455F0F24A7032EFD55C3C13226D4486 /* Pods-WeePay-WeePayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeePay-WeePayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		99BF0D6D2FFCFBD0988D3F201E81134A /* Pods-WeePay-WeePayUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeePay-WeePayUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9CD99BD30A90764987385FB0B4322D56 /* Pods-WeePay-WeePayUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-WeePay-WeePayUITests"; path = Pods_WeePay_WeePayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A4F479239B9F30F40A410616E1A075CC /* Pods-WeePayTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeePayTests-dummy.m"; sourceTree = "<group>"; };
+		A8BFC53E24D10AB040FDBF8573E92151 /* Pods-WeePay.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WeePay.modulemap"; sourceTree = "<group>"; };
+		AB6A801D51E3FBBC39FAF15E418BCBE9 /* Pods-WeePay-WeePayUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WeePay-WeePayUITests.modulemap"; sourceTree = "<group>"; };
+		B58F8CF80CDC6765ED83FE76DE1D923E /* razorpay-core-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-core-pod.release.xcconfig"; sourceTree = "<group>"; };
+		B66A0B360F9BF5DCF399D598A47109E5 /* Pods-WeePay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeePay.debug.xcconfig"; sourceTree = "<group>"; };
+		B67B83FE5373B1CF1CDC0931751E9E62 /* Pods-WeePay */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-WeePay"; path = Pods_WeePay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6FAB304A8EC7D8821B6F112977D347D /* razorpay-core-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-core-pod.debug.xcconfig"; sourceTree = "<group>"; };
+		C1DA258F34C69EF8C0C8CB690B3A43C7 /* RazorpayStandard.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = RazorpayStandard.xcframework; path = Pod/RazorpayStandard.xcframework; sourceTree = "<group>"; };
+		C992FBDDB28498E8A40256EB0F34297A /* razorpay-core-pod-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "razorpay-core-pod-xcframeworks.sh"; sourceTree = "<group>"; };
+		CD16C6E22A5C97B9401815DCC7E41443 /* Pods-WeePay-WeePayUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeePay-WeePayUITests-dummy.m"; sourceTree = "<group>"; };
+		D5126A575C63FF5F6AEF5D6248D714D0 /* Pods-WeePay-WeePayUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeePay-WeePayUITests-umbrella.h"; sourceTree = "<group>"; };
+		E1CEBFD5CA6673E6B39AB21839C2092D /* Pods-WeePay-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeePay-frameworks.sh"; sourceTree = "<group>"; };
+		F0AE7969682B2BC77A339AFC16CF0C4C /* Pods-WeePay-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeePay-acknowledgements.plist"; sourceTree = "<group>"; };
+		F1CD410E81BBB967466906E70CCC007E /* razorpay-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7ED62D3070FAFDF68467A9ECB4DE6972 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC6576DAED4490F705D7609AB128163 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDEA09784697F49E6661C069B95B54DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DB3F590B42602E558819B677E314E6C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1BE020709EDE909512F6FF8C2D24B97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28254D9798274E4DDA56363C4EA7A012 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CF3030B332EF2CFB947BB566A33ADB2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B67B83FE5373B1CF1CDC0931751E9E62 /* Pods-WeePay */,
+				9CD99BD30A90764987385FB0B4322D56 /* Pods-WeePay-WeePayUITests */,
+				26E8BED754A2B43DECDF48FCF7093B9D /* Pods-WeePayTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27006B231496BA74D86300846E11E063 /* Pods-WeePay-WeePayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AB6A801D51E3FBBC39FAF15E418BCBE9 /* Pods-WeePay-WeePayUITests.modulemap */,
+				7852D442EA03027D4B51503DF35C12BA /* Pods-WeePay-WeePayUITests-acknowledgements.markdown */,
+				99BF0D6D2FFCFBD0988D3F201E81134A /* Pods-WeePay-WeePayUITests-acknowledgements.plist */,
+				CD16C6E22A5C97B9401815DCC7E41443 /* Pods-WeePay-WeePayUITests-dummy.m */,
+				3AE7BB28271EABB57B6C6E7DFE316D9F /* Pods-WeePay-WeePayUITests-frameworks.sh */,
+				1775804E903A66D4935454F9CF97BE40 /* Pods-WeePay-WeePayUITests-Info.plist */,
+				D5126A575C63FF5F6AEF5D6248D714D0 /* Pods-WeePay-WeePayUITests-umbrella.h */,
+				9455F0F24A7032EFD55C3C13226D4486 /* Pods-WeePay-WeePayUITests.debug.xcconfig */,
+				173D33CF3A9E8C412A5438D63503A16C /* Pods-WeePay-WeePayUITests.release.xcconfig */,
+			);
+			name = "Pods-WeePay-WeePayUITests";
+			path = "Target Support Files/Pods-WeePay-WeePayUITests";
+			sourceTree = "<group>";
+		};
+		2A14012187FCBFC7A3F912B77C0405F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5553119E116776104C9B0A48BF43C191 /* razorpay-core-pod */,
+				C1DC7C556E3AC2B4057EB40417106928 /* razorpay-pod */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5553119E116776104C9B0A48BF43C191 /* razorpay-core-pod */ = {
+			isa = PBXGroup;
+			children = (
+				7E8B913CB940BE225D35C8429C1B68A9 /* Frameworks */,
+				EE5DB509A26C57E6C2DF79C8C9EA268F /* Support Files */,
+			);
+			name = "razorpay-core-pod";
+			path = "razorpay-core-pod";
+			sourceTree = "<group>";
+		};
+		6FF7328E96011F8BD8509DD70B094971 /* Pods-WeePayTests */ = {
+			isa = PBXGroup;
+			children = (
+				384A992EC99EB53B16CA59520166F333 /* Pods-WeePayTests.modulemap */,
+				45EDD84C4A8B3D9629918BD696514348 /* Pods-WeePayTests-acknowledgements.markdown */,
+				7CD8851FCB54DFCE4CC0370A363589AE /* Pods-WeePayTests-acknowledgements.plist */,
+				A4F479239B9F30F40A410616E1A075CC /* Pods-WeePayTests-dummy.m */,
+				3384AAF6E26862710D86A1CD660BBCCD /* Pods-WeePayTests-Info.plist */,
+				757F4259F15BEF788ED46DCCF7AAA0A6 /* Pods-WeePayTests-umbrella.h */,
+				2CC527F17901FD9E74F528936E026E13 /* Pods-WeePayTests.debug.xcconfig */,
+				200EE2FA57DF0AC9756CF6B0BDB2CE10 /* Pods-WeePayTests.release.xcconfig */,
+			);
+			name = "Pods-WeePayTests";
+			path = "Target Support Files/Pods-WeePayTests";
+			sourceTree = "<group>";
+		};
+		72EB3428E40AE77D87B3A3E98CF646FE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CD0061210A2D9E19AF6CFA4772B9D84 /* razorpay-pod-xcframeworks.sh */,
+				099FD87E3E047F651444BDDD1CC75D83 /* razorpay-pod.debug.xcconfig */,
+				F1CD410E81BBB967466906E70CCC007E /* razorpay-pod.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/razorpay-pod";
+			sourceTree = "<group>";
+		};
+		7E8B913CB940BE225D35C8429C1B68A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				110102E4ED8AEAD5BDA3F89D6D4D47BD /* Razorpay.xcframework */,
+				21ECC14A7FA2CA8B4746EEC97B3F4D17 /* RazorpayCore.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B11395F45BDCEE669D12B7623690456 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1DA258F34C69EF8C0C8CB690B3A43C7 /* RazorpayStandard.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E62631AF285680515CA9F6DDBE58595 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEFE7002C3B9C0A336F912C1DAB68FC8 /* Pods-WeePay */,
+				27006B231496BA74D86300846E11E063 /* Pods-WeePay-WeePayUITests */,
+				6FF7328E96011F8BD8509DD70B094971 /* Pods-WeePayTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BEFE7002C3B9C0A336F912C1DAB68FC8 /* Pods-WeePay */ = {
+			isa = PBXGroup;
+			children = (
+				A8BFC53E24D10AB040FDBF8573E92151 /* Pods-WeePay.modulemap */,
+				8955FB42CBB83AE7BCC073DEFA8B45E7 /* Pods-WeePay-acknowledgements.markdown */,
+				F0AE7969682B2BC77A339AFC16CF0C4C /* Pods-WeePay-acknowledgements.plist */,
+				54D69D992FFD7C9956413443B9F043BB /* Pods-WeePay-dummy.m */,
+				E1CEBFD5CA6673E6B39AB21839C2092D /* Pods-WeePay-frameworks.sh */,
+				457EC7ABE6309B0D003DC1E40EAE11BF /* Pods-WeePay-Info.plist */,
+				18F7922C5DFBE080A0EFA40BB58B1FBE /* Pods-WeePay-umbrella.h */,
+				B66A0B360F9BF5DCF399D598A47109E5 /* Pods-WeePay.debug.xcconfig */,
+				82D3228CF7C0FEBBCAF64F961B4021FD /* Pods-WeePay.release.xcconfig */,
+			);
+			name = "Pods-WeePay";
+			path = "Target Support Files/Pods-WeePay";
+			sourceTree = "<group>";
+		};
+		C1DC7C556E3AC2B4057EB40417106928 /* razorpay-pod */ = {
+			isa = PBXGroup;
+			children = (
+				8B11395F45BDCEE669D12B7623690456 /* Frameworks */,
+				72EB3428E40AE77D87B3A3E98CF646FE /* Support Files */,
+			);
+			name = "razorpay-pod";
+			path = "razorpay-pod";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				2A14012187FCBFC7A3F912B77C0405F0 /* Pods */,
+				1CF3030B332EF2CFB947BB566A33ADB2 /* Products */,
+				8E62631AF285680515CA9F6DDBE58595 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4801F62A6B08CD9B5410329F1A18FDE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EE5DB509A26C57E6C2DF79C8C9EA268F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C992FBDDB28498E8A40256EB0F34297A /* razorpay-core-pod-xcframeworks.sh */,
+				B6FAB304A8EC7D8821B6F112977D347D /* razorpay-core-pod.debug.xcconfig */,
+				B58F8CF80CDC6765ED83FE76DE1D923E /* razorpay-core-pod.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/razorpay-core-pod";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0EB4159634457E6FDCF14972DA300670 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC3464B6E57B6A7C076CD3F896AE4070 /* Pods-WeePayTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5344568D85145FE908F2F612810FCEFF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FDD8967F219C5E37C951F0101D8FA81 /* Pods-WeePay-WeePayUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C285B3B06D097B5715A0582DC5C57E13 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA924F590EED406FFDF4ABDB591D89DB /* Pods-WeePay-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		059689ED4AD7C3C0CDAC51C68C244301 /* Pods-WeePay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE7F5304912416441021F7F17ED50210 /* Build configuration list for PBXNativeTarget "Pods-WeePay" */;
+			buildPhases = (
+				C285B3B06D097B5715A0582DC5C57E13 /* Headers */,
+				3F0726806F0B81548B3382DE660077F9 /* Sources */,
+				D1BE020709EDE909512F6FF8C2D24B97 /* Frameworks */,
+				51585DFD00826AAE48273629FB5F5184 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22C6F997920BEE276022FF7329A234B9 /* PBXTargetDependency */,
+				1921946557A49028A29C2B7412B46D92 /* PBXTargetDependency */,
+			);
+			name = "Pods-WeePay";
+			productName = Pods_WeePay;
+			productReference = B67B83FE5373B1CF1CDC0931751E9E62 /* Pods-WeePay */;
+			productType = "com.apple.product-type.framework";
+		};
+		3FFC637FE8A83E3F8307F4D7FDDA053A /* Pods-WeePayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9FE29EC278774C3C21B5F11A704F775 /* Build configuration list for PBXNativeTarget "Pods-WeePayTests" */;
+			buildPhases = (
+				0EB4159634457E6FDCF14972DA300670 /* Headers */,
+				A88C651C30CFC193D0EBB54415157808 /* Sources */,
+				BDEA09784697F49E6661C069B95B54DE /* Frameworks */,
+				B6EB3D7AA98B731672175BD74C94999F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4F07DD0EBC1F281E8E9DC22C076152E /* PBXTargetDependency */,
+			);
+			name = "Pods-WeePayTests";
+			productName = Pods_WeePayTests;
+			productReference = 26E8BED754A2B43DECDF48FCF7093B9D /* Pods-WeePayTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		4B15D5B3DCE5CE9E58B4C6A8B56022F9 /* Pods-WeePay-WeePayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A417EC7B9714839B3656C6F3697C2777 /* Build configuration list for PBXNativeTarget "Pods-WeePay-WeePayUITests" */;
+			buildPhases = (
+				5344568D85145FE908F2F612810FCEFF /* Headers */,
+				FD50CB9B17117C4777B420B882677B2E /* Sources */,
+				7ED62D3070FAFDF68467A9ECB4DE6972 /* Frameworks */,
+				10322181C745420466AE405DD05B1F8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16D815A36E83232F77346BE32B66980D /* PBXTargetDependency */,
+				34C6AE63F8391FBD82A4ADD5847C0CE4 /* PBXTargetDependency */,
+			);
+			name = "Pods-WeePay-WeePayUITests";
+			productName = Pods_WeePay_WeePayUITests;
+			productReference = 9CD99BD30A90764987385FB0B4322D56 /* Pods-WeePay-WeePayUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1CF3030B332EF2CFB947BB566A33ADB2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				059689ED4AD7C3C0CDAC51C68C244301 /* Pods-WeePay */,
+				4B15D5B3DCE5CE9E58B4C6A8B56022F9 /* Pods-WeePay-WeePayUITests */,
+				3FFC637FE8A83E3F8307F4D7FDDA053A /* Pods-WeePayTests */,
+				0A1CC38B57BF7987D9DDA7A1CE4F117E /* razorpay-core-pod */,
+				84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10322181C745420466AE405DD05B1F8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51585DFD00826AAE48273629FB5F5184 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6EB3D7AA98B731672175BD74C94999F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02323EC498B47C126EE3F67563C69FD5 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/razorpay-core-pod/razorpay-core-pod-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/razorpay-core-pod/razorpay-core-pod-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/razorpay-core-pod/razorpay-core-pod-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B0C12FF9961C3449066BE1F1E2CA2D1 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/razorpay-pod/razorpay-pod-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/razorpay-pod/razorpay-pod-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/razorpay-pod/razorpay-pod-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F0726806F0B81548B3382DE660077F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF2F3D4B9E07A8EF08652CF51A5AE16 /* Pods-WeePay-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A88C651C30CFC193D0EBB54415157808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85FB820B2CFCBF2BBAACAA981CCF63A9 /* Pods-WeePayTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD50CB9B17117C4777B420B882677B2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33D428789247BAEE4A5B310E76891CCC /* Pods-WeePay-WeePayUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16D815A36E83232F77346BE32B66980D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-core-pod";
+			target = 0A1CC38B57BF7987D9DDA7A1CE4F117E /* razorpay-core-pod */;
+			targetProxy = FF41944DCE255C5082F082ABA473CEB2 /* PBXContainerItemProxy */;
+		};
+		1921946557A49028A29C2B7412B46D92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-pod";
+			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
+			targetProxy = 769C501753199073C0DD418160920D86 /* PBXContainerItemProxy */;
+		};
+		22C6F997920BEE276022FF7329A234B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-core-pod";
+			target = 0A1CC38B57BF7987D9DDA7A1CE4F117E /* razorpay-core-pod */;
+			targetProxy = 9A75205ECFC91D016C75AC9A34B8D7F4 /* PBXContainerItemProxy */;
+		};
+		34C6AE63F8391FBD82A4ADD5847C0CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-pod";
+			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
+			targetProxy = 13FBC73C9321FE63F80BD2B900DF9879 /* PBXContainerItemProxy */;
+		};
+		5908021981B15328D9491C9AB6E871E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-core-pod";
+			target = 0A1CC38B57BF7987D9DDA7A1CE4F117E /* razorpay-core-pod */;
+			targetProxy = 3A15E599158784C9F77659B7DB873204 /* PBXContainerItemProxy */;
+		};
+		A4F07DD0EBC1F281E8E9DC22C076152E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-WeePay";
+			target = 059689ED4AD7C3C0CDAC51C68C244301 /* Pods-WeePay */;
+			targetProxy = C1D028E28CB6CDB2459F1867A9E9E344 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2B92B9237FC0D619FC47930AB0DC2EF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6FAB304A8EC7D8821B6F112977D347D /* razorpay-core-pod.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44430D8F13162785C0DD1DFDBC7DFC5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1CD410E81BBB967466906E70CCC007E /* razorpay-pod.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		459E44A88C0691511C896D81EE7FB8FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9455F0F24A7032EFD55C3C13226D4486 /* Pods-WeePay-WeePayUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeePay-WeePayUITests/Pods-WeePay-WeePayUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeePay-WeePayUITests/Pods-WeePay-WeePayUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		531AB9B51913EE274022D67EB63CB4E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		69E4F87A51ACBFD510C5A4C3582052D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CC527F17901FD9E74F528936E026E13 /* Pods-WeePayTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeePayTests/Pods-WeePayTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeePayTests/Pods-WeePayTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6BD8A85B0EFA1AF1B5C30EB600EC040E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B66A0B360F9BF5DCF399D598A47109E5 /* Pods-WeePay.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeePay/Pods-WeePay-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeePay/Pods-WeePay.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9A859311C609093B7D2B98494FA0AA49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B58F8CF80CDC6765ED83FE76DE1D923E /* razorpay-core-pod.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9AFAD00602398E98C4921CEBA0675879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 173D33CF3A9E8C412A5438D63503A16C /* Pods-WeePay-WeePayUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeePay-WeePayUITests/Pods-WeePay-WeePayUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeePay-WeePayUITests/Pods-WeePay-WeePayUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A06A0B8B8C2AC1F57A3C67ACD4FEC0B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		AAF3AA84CED2F102D9BDAD8BF8016438 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82D3228CF7C0FEBBCAF64F961B4021FD /* Pods-WeePay.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeePay/Pods-WeePay-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeePay/Pods-WeePay.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F8494F9F12D3D3D0454CB8BD584DB668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 099FD87E3E047F651444BDDD1CC75D83 /* razorpay-pod.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE6C5EB5E3E0EFC6D3F1BA91671C0282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 200EE2FA57DF0AC9756CF6B0BDB2CE10 /* Pods-WeePayTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeePayTests/Pods-WeePayTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeePayTests/Pods-WeePayTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A06A0B8B8C2AC1F57A3C67ACD4FEC0B3 /* Debug */,
+				531AB9B51913EE274022D67EB63CB4E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A417EC7B9714839B3656C6F3697C2777 /* Build configuration list for PBXNativeTarget "Pods-WeePay-WeePayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459E44A88C0691511C896D81EE7FB8FE /* Debug */,
+				9AFAD00602398E98C4921CEBA0675879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B54C0ACA006E5EEAB781E8D9C809774D /* Build configuration list for PBXAggregateTarget "razorpay-pod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8494F9F12D3D3D0454CB8BD584DB668 /* Debug */,
+				44430D8F13162785C0DD1DFDBC7DFC5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7AAB671052D515B550C277012BF5F4F /* Build configuration list for PBXAggregateTarget "razorpay-core-pod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B92B9237FC0D619FC47930AB0DC2EF3 /* Debug */,
+				9A859311C609093B7D2B98494FA0AA49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9FE29EC278774C3C21B5F11A704F775 /* Build configuration list for PBXNativeTarget "Pods-WeePayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69E4F87A51ACBFD510C5A4C3582052D7 /* Debug */,
+				FE6C5EB5E3E0EFC6D3F1BA91671C0282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE7F5304912416441021F7F17ED50210 /* Build configuration list for PBXNativeTarget "Pods-WeePay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BD8A85B0EFA1AF1B5C30EB600EC040E /* Debug */,
+				AAF3AA84CED2F102D9BDAD8BF8016438 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
