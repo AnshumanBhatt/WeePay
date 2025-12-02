@@ -709,9 +709,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeePay/Preview Content\"";
-				DEVELOPMENT_TEAM = 9K8W3QHCX3;
+				DEVELOPMENT_TEAM = 873C79DZCG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				GOOGLE_API_KEY = "$(GOOGLE_API_KEY)";
 				INFOPLIST_FILE = WeePay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WeePay;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -745,9 +746,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeePay/Preview Content\"";
-				DEVELOPMENT_TEAM = 9K8W3QHCX3;
+				DEVELOPMENT_TEAM = 873C79DZCG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				GOOGLE_API_KEY = "$(GOOGLE_API_KEY)";
 				INFOPLIST_FILE = WeePay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WeePay;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -95,6 +95,9 @@ iOSInjectionProject/
 .AppleDouble
 .LSOverride
 
+# Configuration files
+WeePay/Config/Secrets.xcconfig
+
 # Icon must end with two \r
 Icon
 
